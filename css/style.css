@@ -214,6 +214,9 @@ body {
 .icon-twitter:before {
   content: "\e90b";
 }
+.icon-mail:before {
+  content: "\e935";
+}
 .icon-arrow-double-down:before {
   content: "\e901";
 }
