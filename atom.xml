@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Linkin&#39;s Park</title>
+  
+  <subtitle>Blog of linkinpark213</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://linkinpark213.github.io/"/>
+  <updated>2018-02-13T10:38:04.478Z</updated>
+  <id>http://linkinpark213.github.io/</id>
+  
+  <author>
+    <name>Harper Long</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Cheers for the 8th International linkinpark213 Day!</title>
+    <link href="http://linkinpark213.github.io/2018/02/13/linkinpark213-day/"/>
+    <id>http://linkinpark213.github.io/2018/02/13/linkinpark213-day/</id>
+    <published>2018-02-13T07:03:02.047Z</published>
+    <updated>2018-02-13T10:38:04.478Z</updated>
+    
+    <content type="html"><![CDATA[<p>Cheers for the 8th International linkinpark213 Day!</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="string">'Harper'</span> <span class="string">'Sweet'</span> <span class="string">'Kobayashi'</span> <span class="string">'Kawasaki'</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"I'm <span class="variable">$i</span>, cheers!"</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure><h2 id="What-is-linkinpark213-Day"><a href="#What-is-linkinpark213-Day" class="headerlink" title="What is linkinpark213 Day?"></a>What is linkinpark213 Day?</h2><p>International linkinpark213 Day is a global anniversary set up by Harper Long in 2011 A.D., celebrated on February 13th every year. This anniversary is officially written as ‘linkinpark213 Day’, the first letter of which is a lower-case. The establishment of the anniversary dates back to the early 10s in the 21st century.</p><p>Till now, the population for this anniversary has already reached 1e-6 million, and the distribution also expanded from a small county to the whole middle-China area, including Hebei, Henan, Shanxi and Shaanxi province. There will also be some people living in Japan who plan to celebrate this day in 2019.</p><h2 id="Why-13th-Feb"><a href="#Why-13th-Feb" class="headerlink" title="Why 13th Feb?"></a>Why 13th Feb?</h2><p>According to the modern Chinese habit of writing, ‘13th Feb’ is usually written as ‘2.13’. Also, ‘13’ and ‘B’ look similar and are often regarded to be equal. In conclusion, ‘13 Feb’ can be transformed to ‘2B’, which is a common word in Chinese. Although the word is sometimes classified as “offensive”, it reflects feelings of optimism, bravery and entertainment.</p><h2 id="How-do-people-celebrate-the-day"><a href="#How-do-people-celebrate-the-day" class="headerlink" title="How do people celebrate the day?"></a>How do people celebrate the day?</h2><p>When the anniversary was first set up, there was no officially specified ways of celebration. People gathered, held parties and enjoyed spending time together. </p><p>On the 3th linkinpark213 Day, a proposal by a high school Chinese teacher was taken as the official way of celebration – on each linkinpark213 Day, a number of people participate in the Pigeon-Flying Competition funded by Harper Long. This way of celebration prevailed until now, and all participants except Harper Long won the competition every year.</p><p>Pigeon-Flying is a broadly-accepted traditional Chinese custom, the exact origin of which is too ancient to be revealed. Modern scholars tend to believe that this custom became well-known no later than 206 A.D. in China. In modern times, pigeon-flying is an activity involving “making a promise” and “not keeping it”. According to some folk stories, this activity was firstly named when it happened to a pigeon keeper when he forgot to keep a promise that he made with a friend. </p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    Promise promise = <span class="keyword">new</span> Promise();</span><br><span class="line">    promise.make(<span class="string">"I will come!"</span>);</span><br><span class="line">    System.exit(<span class="number">0</span>);</span><br><span class="line">    promise.keep();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>(Please notice that pigeon-flying mentioned here is not the same activity as what happens every Olympics since 1896 A.D.)</p><p>Join our celebration today! You can easily participate in the Pigeon-Flying Competition by not participating.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Cheers for the 8th International linkinpark213 Day!&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;li
+      
+    
+    </summary>
+    
+    
+      <category term="Other" scheme="http://linkinpark213.github.io/tags/Other/"/>
+    
+  </entry>
+  
+</feed>
