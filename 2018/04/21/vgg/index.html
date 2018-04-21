@@ -7,11 +7,11 @@
 
     
 
-    <title>Linkin213&#39;s Park</title>
+    <title>A review of VGG net - Very Deep Convolutional Neural Networks | Linkin213&#39;s Park</title>
     <meta name="author" content="Harper Long" />
     <meta name="version" content="1.0.0" />
     <meta name="keywords" content="" />
-    <meta name="description" content="" />
+    <meta name="description" content="IntroductionConvolutional neural networks(CNN) have enjoyed great success in conputer vision research fields in the past few years. A number of attempts are made based on the original CNN architecture to improve its accuracy and performance. In 2014," />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
     <meta name="baidu-site-verification" content="F0CXvmUgA9" />
@@ -34,7 +34,7 @@
 
         
         
-        <li class="nav-item active">
+        <li class="nav-item">
             <a class="nav-link" href="/">Home</a>
         </li>
         
@@ -90,43 +90,23 @@
 
         
         
+        
+        
 
         
-        <div class="author-meta">
-            
-            <div class="author-avatar">
-                <a href="/">
-                    <img src="/images/avatar.png" title="Avatar By Xizi Wu">
-                </a>
-            </div>
-            
-            <div class="author-name">Harper Long</div>
-            <div class="author-work">Student</div>
-            <div class="author-location">
-                <i class="icon-location vm"></i>
-                <span class="vm">Shaanxi, China</span>
-            </div>
-            <div class="author-thread-wrap">
-                <div class="author-threads clearfix">
-                    <a class="thread-item" href="https://github.com/linkinpark213" target="_blank"><i class="icon-github"></i></a>
-                    <a class="thread-item" href="mailto:linkinpark213@outlook.com" target="_blank"><i class="icon-mail"></i></a>
-                    <a class="thread-item" href="https://twitter.com/linkinpark2130" target="_blank"><i class="icon-twitter"></i></a>
-                </div>
-            </div>
-        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Introduction"><span class="toc-number">1.</span> <span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#VGG-net-39-s-ancestors"><span class="toc-number">2.</span> <span class="toc-text">VGG net&#39;s ancestors</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#LeNet-The-Origin"><span class="toc-number">2.1.</span> <span class="toc-text">LeNet: The Origin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AlexNet-The-Powerful-Convolution"><span class="toc-number">2.2.</span> <span class="toc-text">AlexNet: The Powerful Convolution</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#VGG-Nets"><span class="toc-number">3.</span> <span class="toc-text">VGG Nets</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Stacks-of-Smaller-Convolution-Filters"><span class="toc-number">3.1.</span> <span class="toc-text">Stacks of Smaller Convolution Filters</span></a></li></ol></li></ol>
         
     </div>
 </aside>
 
 </header>
 
-        <div id="content" class="content">
-    <article class="article" itemscope itemprop="blogPost">
+        <div id="content" class="content"><article class="article" itemscope itemprop="blogPost">
     
     <header class="article-header">
         
         <h1 itemprop="name">
-            <a href="/2018/04/21/vgg/">A review of VGG net - Very Deep Convolutional Neural Networks</a>
+            A review of VGG net - Very Deep Convolutional Neural Networks
         </h1>
         
         
@@ -154,114 +134,61 @@
         <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Convolutional neural networks(CNN) have enjoyed great success in conputer vision research fields in the past few years. A number of attempts are made based on the original CNN architecture to improve its accuracy and performance. In 2014, Karen Simonyan et al did an investigation on the effect of depth on CNNs&#39; accuracy in large-scale image recognition (thus also proposing a series of very deep CNNs which are usually called VGG nets). The result confirmed the importance of CNN depth in visual representations.</p>
 <h2 id="VGG-net-39-s-ancestors"><a href="#VGG-net-39-s-ancestors" class="headerlink" title="VGG net&#39;s ancestors"></a>VGG net&#39;s ancestors</h2><p>Before introcducing VGG net, let&#39;s take a glance at prior convolutional neural networks. </p>
 <h3 id="LeNet-The-Origin"><a href="#LeNet-The-Origin" class="headerlink" title="LeNet: The Origin"></a>LeNet: The Origin</h3><p>Basic neural network structures(for example, multi-layer preceptron) learn patterns on 1D vectors, which cannot cope with 2D features in images well. In 1986, Lecun et al proposed a convolution network model called LeNet-5. Its structure is fairly simple: two convolution layers, two subsampling layers and a few fully connected layers. This network was used to solve a number recognition problem. (If you need to learn more about the convolution operation, please refer to Google or <em>Digital Image Processing</em> by Rafael C. Gonzalez)</p>
-        
-        <p class="article-more-link">
-            <a href="/2018/04/21/vgg/#more">
-                <span class="vm">Read More</span>
-                <i class="icon-arrow-double-right vm"></i>    
-            </a>
-        </p>
-        
+<a id="more"></a>
+<div align="center"><br><img src="/images/lenet.png" alt="LeNet"><br></div>
+
+<h3 id="AlexNet-The-Powerful-Convolution"><a href="#AlexNet-The-Powerful-Convolution" class="headerlink" title="AlexNet: The Powerful Convolution"></a>AlexNet: The Powerful Convolution</h3><p>In 2012, Alex Krizhevsky et al won the first place in ILSVRC-2012(ImageNet Large-Scale Visual Recognition Challenge 2012) and achieved the highest top-5 error rate of 15.3% with a convolutional network model, while the second-best entry only achieved 26.2%. The network, namely AlexNet, was trained on two GTX580 3GB GPUs parallenized. Since a single GTX580 GPU has only 3GB memory, the maximum size of networks is limited. This model proved the effectiveness of CNNs under complicated circumstances and the power of GPUs. So what if the network can go deeper? Will the top-5 error rate get even lower?</p>
+<div align="center"><br><img src="/images/alexnet.png" alt="AlexNet"><br></div>
+
+<h2 id="VGG-Nets"><a href="#VGG-Nets" class="headerlink" title="VGG Nets"></a>VGG Nets</h2><p>Here comes our hero - VGG nets. By the way, VGG is not the name of the network, but the name of the authors&#39; group - <em>Visual Geometry Group</em>, from Department of Engineering Science, University of Oxford. The networks they proposed were therefore named after the group. The main contributions of VGG nets are: 1. more but smaller convolution filters; 2. great depth of networks.</p>
+<h3 id="Stacks-of-Smaller-Convolution-Filters"><a href="#Stacks-of-Smaller-Convolution-Filters" class="headerlink" title="Stacks of Smaller Convolution Filters"></a>Stacks of Smaller Convolution Filters</h3><p>Rather than using relatively large receptive fields in the first convolution layers, Simonyan et al selected very small 3x3 receptive fields throughout the whole net, which are convolved with the input at every pixel with a stride of 1. As is shown in the figures below, a stack of two 3x3 convolution layers has an effective receptive field of 5x5. We can also conclude that a stack of three 3x3 convolution filters has an effective receptive field of 7x7.</p>
+<div align="center"><br>    <img src="/images/conv1.png" width="50%" height="50%" alt="Conv5x5"><br>    <img src="/images/conv2.png" width="50%" height="50%" alt="Conv3x3x2"><br></div>
+      <script>
+        window.disqusProxy={
+          shortname: 'linkinpark213',
+          username: 'someone',
+          server: '67.218.155.58',
+          port: 5509,
+          adminAvatar: '/avatars/admin-avatar.jpg',
+          identifier: '2018/04/21/vgg/',
+        };
+        window.disqus_config = function () {
+          this.page.url = window.location.href;
+          this.page.identifier = window.disqusProxy.identifier;
+        };
+      </script>
         
     </section>
 </article>
 
 
-    <article class="article" itemscope itemprop="blogPost">
-    
-    <header class="article-header">
-        
-        <h1 itemprop="name">
-            <a href="/2018/03/20/smartypants/">Smartypants is NOT SO SMART</a>
-        </h1>
-        
-        
-        <div class="article-meta clearfix">
-            <a class="article-date" href="/2018/03/20/smartypants/">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2018-03-20T03:00:22.000Z" itemprop="datePublished">2018-03-20</time>
-</a>
 
-            
-<div class="article-tag-list">
-    <i class="icon-tag"></i>
-    <a class="article-tag-link" href="/tags/Blogging/">Blogging</a>
+<div class="comments">
+    
+      <script src="//cdn.bootcss.com/react/16.0.0/umd/react.production.min.js"></script>
+      <script src="//cdn.bootcss.com/react-dom/16.0.0/umd/react-dom.production.min.js"></script>
+      <script src="//cdn.bootcss.com/fetch/2.0.3/fetch.min.js"></script>
+      <script src="//cdn.jsdelivr.net/npm/blockies-identicon@0.1.0/blockies.min.js"></script>
+      <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+      <div id="disqus_proxy_thread"><script src="/scripts/hexo-disqus-proxy-primary.js" async></script>
+        <p class="comment-tips">国内查看评论需要代理~</p>
+    </div>
+    <script>
+    window.disqus_config = function () {
+        this.language = 'zh';
+        this.page.url = 'http://linkinpark213.com/2018/04/21/vgg/';
+        this.page.title = 'A review of VGG net - Very Deep Convolutional Neural Networks';
+        this.page.identifier = '2018/04/21/vgg/';
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        
+        s.setAttribute('data-timestamp', +new Date());
+        
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
-
-
-        </div>
-        
-    </header>
-    
-    <section class="article-body markdown-body">
-        
-        <p>When blogging with Hexo, every time I type a single quotation mark(also called apostrophe) like this:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;</span><br></pre></td></tr></table></figure></p>
-<p>, Hexo would convert it to a symbol like this<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">’</span><br></pre></td></tr></table></figure></p>
-<p>You would say that this is also an apotrophe, but it really looks UNBEARABLE in the articles. It&#39;s been a problem bothering me for more than a month.(I&#39;m not saying that this is the reason for not updating my blog, but I don&#39;t mind if you think so!)</p>
-        
-        <p class="article-more-link">
-            <a href="/2018/03/20/smartypants/#more">
-                <span class="vm">Read More</span>
-                <i class="icon-arrow-double-right vm"></i>    
-            </a>
-        </p>
-        
-        
-    </section>
-</article>
-
-
-    <article class="article" itemscope itemprop="blogPost">
-    
-    <header class="article-header">
-        
-        <h1 itemprop="name">
-            <a href="/2018/02/13/linkinpark213-day/">Cheers for the 8th International linkinpark213 Day!</a>
-        </h1>
-        
-        
-        <div class="article-meta clearfix">
-            <a class="article-date" href="/2018/02/13/linkinpark213-day/">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2018-02-13T07:03:02.047Z" itemprop="datePublished">2018-02-13</time>
-</a>
-
-            
-<div class="article-tag-list">
-    <i class="icon-tag"></i>
-    <a class="article-tag-link" href="/tags/Other/">Other</a>
-</div>
-
-
-        </div>
-        
-    </header>
-    
-    <section class="article-body markdown-body">
-        
-        <p>Cheers for the 8th International linkinpark213 Day!</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="string">'Harper'</span> <span class="string">'Sweet'</span> <span class="string">'Kobayashi'</span> <span class="string">'Kawasaki'</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"I'm <span class="variable">$i</span>, cheers!"</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
-<h2 id="What-is-linkinpark213-Day"><a href="#What-is-linkinpark213-Day" class="headerlink" title="What is linkinpark213 Day?"></a>What is linkinpark213 Day?</h2><p>International linkinpark213 Day is a global anniversary set up by Harper Long in 2011 A.D., celebrated on February 13th every year. This anniversary is officially written as &#39;linkinpark213 Day&#39;, the first letter of which is a lower-case. The establishment of the anniversary dates back to the early 10s in the 21st century.</p>
-<p>Till now, the population for this anniversary has already reached 1e-6 million, and the distribution also expanded from a small county to the whole middle-China area, including Hebei, Henan, Shanxi and Shaanxi province. There will also be some Japanese resident who plan to celebrate this day in 2019.</p>
-        
-        <p class="article-more-link">
-            <a href="/2018/02/13/linkinpark213-day/#more">
-                <span class="vm">Read More</span>
-                <i class="icon-arrow-double-right vm"></i>    
-            </a>
-        </p>
-        
-        
-    </section>
-</article>
-
-
-
-
 
 </div>
         <footer class="footer">
@@ -274,6 +201,8 @@
     </div>
 
     <script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
+    
+    <script type="text/javascript" src="/js/scrollspy.min.js"></script>
     
     <script type="text/javascript">
         $(function() {
@@ -295,6 +224,8 @@
                 nodes.navTags.removeClass('tag-show');
             });*/
 
+            
+            $(document.body).scrollspy({target: '#aside-inner'});
             
         });
     </script>

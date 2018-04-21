@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://linkinpark213.com/"/>
-  <updated>2018-03-20T12:19:17.411Z</updated>
+  <updated>2018-04-21T11:46:27.191Z</updated>
   <id>http://linkinpark213.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>A review of VGG net - Very Deep Convolutional Neural Networks</title>
+    <link href="http://linkinpark213.com/2018/04/21/vgg/"/>
+    <id>http://linkinpark213.com/2018/04/21/vgg/</id>
+    <published>2018-04-21T08:15:55.000Z</published>
+    <updated>2018-04-21T11:46:27.191Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Convolutional neural networks(CNN) have enjoyed great success in conputer vision research fields in the past few years. A number of attempts are made based on the original CNN architecture to improve its accuracy and performance. In 2014, Karen Simonyan et al did an investigation on the effect of depth on CNNs&#39; accuracy in large-scale image recognition (thus also proposing a series of very deep CNNs which are usually called VGG nets). The result confirmed the importance of CNN depth in visual representations.</p><h2 id="VGG-net-39-s-ancestors"><a href="#VGG-net-39-s-ancestors" class="headerlink" title="VGG net&#39;s ancestors"></a>VGG net&#39;s ancestors</h2><p>Before introcducing VGG net, let&#39;s take a glance at prior convolutional neural networks. </p><h3 id="LeNet-The-Origin"><a href="#LeNet-The-Origin" class="headerlink" title="LeNet: The Origin"></a>LeNet: The Origin</h3><p>Basic neural network structures(for example, multi-layer preceptron) learn patterns on 1D vectors, which cannot cope with 2D features in images well. In 1986, Lecun et al proposed a convolution network model called LeNet-5. Its structure is fairly simple: two convolution layers, two subsampling layers and a few fully connected layers. This network was used to solve a number recognition problem. (If you need to learn more about the convolution operation, please refer to Google or <em>Digital Image Processing</em> by Rafael C. Gonzalez)</p><a id="more"></a><div align="center"><br><img src="/images/lenet.png" alt="LeNet"><br></div><h3 id="AlexNet-The-Powerful-Convolution"><a href="#AlexNet-The-Powerful-Convolution" class="headerlink" title="AlexNet: The Powerful Convolution"></a>AlexNet: The Powerful Convolution</h3><p>In 2012, Alex Krizhevsky et al won the first place in ILSVRC-2012(ImageNet Large-Scale Visual Recognition Challenge 2012) and achieved the highest top-5 error rate of 15.3% with a convolutional network model, while the second-best entry only achieved 26.2%. The network, namely AlexNet, was trained on two GTX580 3GB GPUs parallenized. Since a single GTX580 GPU has only 3GB memory, the maximum size of networks is limited. This model proved the effectiveness of CNNs under complicated circumstances and the power of GPUs. So what if the network can go deeper? Will the top-5 error rate get even lower?</p><div align="center"><br><img src="/images/alexnet.png" alt="AlexNet"><br></div><h2 id="VGG-Nets"><a href="#VGG-Nets" class="headerlink" title="VGG Nets"></a>VGG Nets</h2><p>Here comes our hero - VGG nets. By the way, VGG is not the name of the network, but the name of the authors&#39; group - <em>Visual Geometry Group</em>, from Department of Engineering Science, University of Oxford. The networks they proposed were therefore named after the group. The main contributions of VGG nets are: 1. more but smaller convolution filters; 2. great depth of networks.</p><h3 id="Stacks-of-Smaller-Convolution-Filters"><a href="#Stacks-of-Smaller-Convolution-Filters" class="headerlink" title="Stacks of Smaller Convolution Filters"></a>Stacks of Smaller Convolution Filters</h3><p>Rather than using relatively large receptive fields in the first convolution layers, Simonyan et al selected very small 3x3 receptive fields throughout the whole net, which are convolved with the input at every pixel with a stride of 1. As is shown in the figures below, a stack of two 3x3 convolution layers has an effective receptive field of 5x5. We can also conclude that a stack of three 3x3 convolution filters has an effective receptive field of 7x7.</p><div align="center"><br>    <img src="/images/conv1.png" width="50%" height="50%" alt="Conv5x5"><br>    <img src="/images/conv2.png" width="50%" height="50%" alt="Conv3x3x2"><br></div>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;p&gt;Convolutional neural networks(CNN) have enjoyed great success in conputer vision research fields in the past few years. A number of attempts are made based on the original CNN architecture to improve its accuracy and performance. In 2014, Karen Simonyan et al did an investigation on the effect of depth on CNNs&amp;#39; accuracy in large-scale image recognition (thus also proposing a series of very deep CNNs which are usually called VGG nets). The result confirmed the importance of CNN depth in visual representations.&lt;/p&gt;
+&lt;h2 id=&quot;VGG-net-39-s-ancestors&quot;&gt;&lt;a href=&quot;#VGG-net-39-s-ancestors&quot; class=&quot;headerlink&quot; title=&quot;VGG net&amp;#39;s ancestors&quot;&gt;&lt;/a&gt;VGG net&amp;#39;s ancestors&lt;/h2&gt;&lt;p&gt;Before introcducing VGG net, let&amp;#39;s take a glance at prior convolutional neural networks. &lt;/p&gt;
+&lt;h3 id=&quot;LeNet-The-Origin&quot;&gt;&lt;a href=&quot;#LeNet-The-Origin&quot; class=&quot;headerlink&quot; title=&quot;LeNet: The Origin&quot;&gt;&lt;/a&gt;LeNet: The Origin&lt;/h3&gt;&lt;p&gt;Basic neural network structures(for example, multi-layer preceptron) learn patterns on 1D vectors, which cannot cope with 2D features in images well. In 1986, Lecun et al proposed a convolution network model called LeNet-5. Its structure is fairly simple: two convolution layers, two subsampling layers and a few fully connected layers. This network was used to solve a number recognition problem. (If you need to learn more about the convolution operation, please refer to Google or &lt;em&gt;Digital Image Processing&lt;/em&gt; by Rafael C. Gonzalez)&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Deep Learning" scheme="http://linkinpark213.com/tags/Deep-Learning/"/>
+    
+      <category term="Computer Vision" scheme="http://linkinpark213.com/tags/Computer-Vision/"/>
+    
+  </entry>
   
   <entry>
     <title>Smartypants is NOT SO SMART</title>
