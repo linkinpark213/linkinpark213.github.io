@@ -1742,3 +1742,7 @@ body {
 .page-nav .space {
   margin: 0 4px;
 }
+.figure {
+  align-content: center;
+  color: gray;
+}
