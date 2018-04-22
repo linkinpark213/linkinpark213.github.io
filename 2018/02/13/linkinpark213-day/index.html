@@ -146,20 +146,6 @@ What is linkinpark213 Day?International linkinpark213 Day is a global anniversar
 <p>(Please notice that pigeon-flying mentioned here is not the same activity as what happens every Olympics since 1896 A.D.)</p>
 <p>Join our celebration today! You can easily participate in the Pigeon-Flying Competition by not participating.</p>
 
-      <script>
-        window.disqusProxy={
-          shortname: 'linkinpark213',
-          username: 'someone',
-          server: '67.218.155.58',
-          port: 5509,
-          adminAvatar: '/avatars/admin-avatar.jpg',
-          identifier: '2018/02/13/linkinpark213-day/',
-        };
-        window.disqus_config = function () {
-          this.page.url = window.location.href;
-          this.page.identifier = window.disqusProxy.identifier;
-        };
-      </script>
         
     </section>
 </article>
@@ -167,13 +153,7 @@ What is linkinpark213 Day?International linkinpark213 Day is a global anniversar
 
 
 <div class="comments">
-    
-      <script src="//cdn.bootcss.com/react/16.0.0/umd/react.production.min.js"></script>
-      <script src="//cdn.bootcss.com/react-dom/16.0.0/umd/react-dom.production.min.js"></script>
-      <script src="//cdn.bootcss.com/fetch/2.0.3/fetch.min.js"></script>
-      <script src="//cdn.jsdelivr.net/npm/blockies-identicon@0.1.0/blockies.min.js"></script>
-      <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-      <div id="disqus_proxy_thread"><script src="/scripts/hexo-disqus-proxy-primary.js" async></script>
+    <div id="disqus_thread">
         <p class="comment-tips">国内查看评论需要代理~</p>
     </div>
     <script>
@@ -185,9 +165,9 @@ What is linkinpark213 Day?International linkinpark213 Day is a global anniversar
     };
     (function() { // DON'T EDIT BELOW THIS LINE
         var d = document, s = d.createElement('script');
-        
+        s.src = 'https://linkinpark213.disqus.com/embed.js';
         s.setAttribute('data-timestamp', +new Date());
-        
+        (d.head || d.body).appendChild(s);
     })();
     </script>
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>

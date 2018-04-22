@@ -101,7 +101,7 @@
             </div>
             
             <div class="author-name">Harper Long</div>
-            <div class="author-work">Student</div>
+            <div class="author-work">A naive student</div>
             <div class="author-location">
                 <i class="icon-location vm"></i>
                 <span class="vm">Shaanxi, China</span>
@@ -121,6 +121,54 @@
 </header>
 
         <div id="content" class="content">
+    <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            <a href="/2018/04/22/resnet/">A review of ResNet - Residual Networks</a>
+        </h1>
+        
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="/2018/04/22/resnet/">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2018-04-22T06:55:35.000Z" itemprop="datePublished">2018-04-22</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/Computer-Vision/">Computer Vision</a>, <a class="article-tag-link" href="/tags/Deep-Learning/">Deep Learning</a>
+</div>
+
+
+        </div>
+        
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Deep learning researchers have been constructing skyscrapers in recent years. Especially, VGG nets and GoogLeNet have pushed the depths of convolutional networks to the extreme. But questions remain: if time and money aren&#39;t problems, are deeper networks always perform better? Not exactly.</p>
+<p>When residual networks were proposed, researchers around the world was stunned by its depth. &quot;Jesus Christ! Is this a neural network or the Dubai Tower?&quot; <strong>Don&#39;t be afraid!</strong> Interestingly, these networks not only defeated all opponents in the classification, detection, localization challenges in ImageNet 2015, but were also the main innovation in the best paper of CVPR2016.</p>
+<div align="center"><br>    <img src="/images/resnet/network_growth.jpg" width="40%" height="40%" alt="Network Growth"><br></div>
+        
+        <p class="article-more-link">
+            <a href="/2018/04/22/resnet/#more">
+                <span class="vm">Read More</span>
+                <i class="icon-arrow-double-right vm"></i>    
+            </a>
+        </p>
+        
+        
+    </section>
+</article>
+
+
     <article class="article" itemscope itemprop="blogPost">
     
     <header class="article-header">
@@ -151,9 +199,11 @@
     
     <section class="article-body markdown-body">
         
-        <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Convolutional neural networks(CNN) have enjoyed great success in conputer vision research fields in the past few years. A number of attempts are made based on the original CNN architecture to improve its accuracy and performance. In 2014, Karen Simonyan et al did an investigation on the effect of depth on CNNs&#39; accuracy in large-scale image recognition (thus also proposing a series of very deep CNNs which are usually called VGG nets). The result confirmed the importance of CNN depth in visual representations.</p>
-<h2 id="VGG-net-39-s-ancestors"><a href="#VGG-net-39-s-ancestors" class="headerlink" title="VGG net&#39;s ancestors"></a>VGG net&#39;s ancestors</h2><p>Before introcducing VGG net, let&#39;s take a glance at prior convolutional neural networks. </p>
-<h3 id="LeNet-The-Origin"><a href="#LeNet-The-Origin" class="headerlink" title="LeNet: The Origin"></a>LeNet: The Origin</h3><p>Basic neural network structures(for example, multi-layer preceptron) learn patterns on 1D vectors, which cannot cope with 2D features in images well. In 1986, Lecun et al proposed a convolution network model called LeNet-5. Its structure is fairly simple: two convolution layers, two subsampling layers and a few fully connected layers. This network was used to solve a number recognition problem. (If you need to learn more about the convolution operation, please refer to Google or <em>Digital Image Processing</em> by Rafael C. Gonzalez)</p>
+        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Convolutional neural networks(CNN) have enjoyed great success in conputer vision research fields in the past few years. A number of attempts are made based on the original CNN architecture to improve its accuracy and performance. In 2014, Karen Simonyan et al. did an investigation on the effect of depth on CNNs&#39; accuracy in large-scale image recognition (thus also proposing a series of very deep CNNs which are usually called VGG nets). The result confirmed the importance of CNN depth in visual representations.</p>
+<h2 id="Background-VGG-net-39-s-ancestors"><a href="#Background-VGG-net-39-s-ancestors" class="headerlink" title="Background: VGG net&#39;s ancestors"></a>Background: VGG net&#39;s ancestors</h2><p>Before introcducing VGG net, let&#39;s take a glance at prior convolutional neural networks. </p>
+<h3 id="LeNet-The-Origin"><a href="#LeNet-The-Origin" class="headerlink" title="LeNet: The Origin"></a>LeNet: The Origin</h3><p>Basic neural network structures(for example, multi-layer preceptron) learn patterns on 1D vectors, which cannot cope with 2D features in images well. In 1986, Lecun et al. proposed a convolution network model called LeNet-5. Its structure is fairly simple: two convolution layers, two subsampling layers and a few fully connected layers. This network was used to solve a number recognition problem. (If you need to learn more about the convolution operation, please refer to Google or <em>Digital Image Processing</em> by Rafael C. Gonzalez)</p>
         
         <p class="article-more-link">
             <a href="/2018/04/21/vgg/#more">

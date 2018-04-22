@@ -105,7 +105,7 @@ You would say that this is also an apotrophe, but it really looks UNBEARABLE in 
             </div>
             
             <div class="author-name">Harper Long</div>
-            <div class="author-work">Student</div>
+            <div class="author-work">A naive student</div>
             <div class="author-location">
                 <i class="icon-location vm"></i>
                 <span class="vm">Shaanxi, China</span>
@@ -174,20 +174,6 @@ You would say that this is also an apotrophe, but it really looks UNBEARABLE in 
 <p>Now you know what to do.</p>
 <p>Aaaaaaaaaaaaaaaand many thanks to Xizi Wu, the artist of my new avatar! I love it!<br><img src="/images/long_nobg.png" alt="Harper Long by Xizi Wu"></p>
 
-      <script>
-        window.disqusProxy={
-          shortname: 'linkinpark213',
-          username: 'someone',
-          server: '67.218.155.58',
-          port: 5509,
-          adminAvatar: '/avatars/admin-avatar.jpg',
-          identifier: '2018/03/20/smartypants/',
-        };
-        window.disqus_config = function () {
-          this.page.url = window.location.href;
-          this.page.identifier = window.disqusProxy.identifier;
-        };
-      </script>
         
     </section>
 </article>
@@ -195,13 +181,7 @@ You would say that this is also an apotrophe, but it really looks UNBEARABLE in 
 
 
 <div class="comments">
-    
-      <script src="//cdn.bootcss.com/react/16.0.0/umd/react.production.min.js"></script>
-      <script src="//cdn.bootcss.com/react-dom/16.0.0/umd/react-dom.production.min.js"></script>
-      <script src="//cdn.bootcss.com/fetch/2.0.3/fetch.min.js"></script>
-      <script src="//cdn.jsdelivr.net/npm/blockies-identicon@0.1.0/blockies.min.js"></script>
-      <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-      <div id="disqus_proxy_thread"><script src="/scripts/hexo-disqus-proxy-primary.js" async></script>
+    <div id="disqus_thread">
         <p class="comment-tips">国内查看评论需要代理~</p>
     </div>
     <script>
@@ -213,9 +193,9 @@ You would say that this is also an apotrophe, but it really looks UNBEARABLE in 
     };
     (function() { // DON'T EDIT BELOW THIS LINE
         var d = document, s = d.createElement('script');
-        
+        s.src = 'https://linkinpark213.disqus.com/embed.js';
         s.setAttribute('data-timestamp', +new Date());
-        
+        (d.head || d.body).appendChild(s);
     })();
     </script>
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>

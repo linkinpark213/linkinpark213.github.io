@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+
+    
+
+    
+
+    <title>A review of ResNet - Residual Networks | Linkin213&#39;s Park</title>
+    <meta name="author" content="Harper Long" />
+    <meta name="version" content="1.0.0" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="
+
+IntroductionDeep learning researchers have been constructing skyscrapers in recent years. Especially, VGG nets and GoogLeNet have pushed the depths of convolutional networks to the extreme. But questions remain: if time and money aren&amp;#39;t problem" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+    <meta name="baidu-site-verification" content="F0CXvmUgA9" />
+
+    
+    
+    <link rel="icon" href="/images/favicon.png">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <div class="app">
+        <header class="header clearfix">
+    <div id="nav" class="nav">
+    <button id="open-panel" class="open-panel"><i class="icon-library"></i></button>
+
+    <nav class="nav-inner">
+
+        
+        
+        <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+        </li>
+        
+        
+        
+        <li class="nav-item nav-item-tag">
+            <a id="nav-tag" class="nav-link" href="#">Tags</a>
+            <div id="nav-tags" class="nav-tag-wrap">
+                <i class="nav-tag-arrow"></i>
+                
+  <div class="widget-wrap">
+    <h3 class="widget-title">
+        <i class="icon-tag vm"></i>
+        <span class="vm">标签</span>
+    </h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blogging/">Blogging</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Computer-Vision/">Computer Vision</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Deep-Learning/">Deep Learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Other/">Other</a></li></ul>
+    </div>
+  </div>
+
+
+            </div>
+        </li>
+        
+        
+        
+        <li class="nav-item">
+            <a class="nav-link" href="/archives">Archives</a>
+        </li>
+        
+        
+        
+        <li class="nav-item">
+            <a class="nav-link" href="/atom.xml">RSS</a>
+        </li>
+        
+        
+        
+        <li class="nav-item">
+            <a class="nav-link" href="/about">About</a>
+        </li>
+        
+        
+        
+
+    </nav>
+</div>
+
+    <aside id="aside" class="aside">
+    <div id="aside-mask" class="aside-mask"></div>
+    <div id="aside-inner" class="aside-inner">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit"><i class="icon-search-stroke"></i></button><input type="hidden" name="sitesearch" value="http://linkinpark213.com"></form>
+
+        
+        
+        
+        
+
+        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Introduction"><span class="toc-number">1.</span> <span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#The-Crisis-Degradation-of-Deep-Networks"><span class="toc-number">2.</span> <span class="toc-text">The Crisis: Degradation of Deep Networks</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#A-Closer-Look-at-ResNet-The-Residual-Blocks"><span class="toc-number">3.</span> <span class="toc-text">A Closer Look at ResNet: The Residual Blocks</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Skip-Connections"><span class="toc-number">3.1.</span> <span class="toc-text">Skip Connections</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Identity-Mappings"><span class="toc-number">3.2.</span> <span class="toc-text">Identity Mappings</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pre-Activation"><span class="toc-number">3.3.</span> <span class="toc-text">Pre-Activation</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#References"><span class="toc-number">4.</span> <span class="toc-text">References</span></a></li></ol>
+        
+    </div>
+</aside>
+
+</header>
+
+        <div id="content" class="content"><article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            A review of ResNet - Residual Networks
+        </h1>
+        
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="/2018/04/22/resnet/">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2018-04-22T06:55:35.000Z" itemprop="datePublished">2018-04-22</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/Computer-Vision/">Computer Vision</a>, <a class="article-tag-link" href="/tags/Deep-Learning/">Deep Learning</a>
+</div>
+
+
+        </div>
+        
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Deep learning researchers have been constructing skyscrapers in recent years. Especially, VGG nets and GoogLeNet have pushed the depths of convolutional networks to the extreme. But questions remain: if time and money aren&#39;t problems, are deeper networks always perform better? Not exactly.</p>
+<p>When residual networks were proposed, researchers around the world was stunned by its depth. &quot;Jesus Christ! Is this a neural network or the Dubai Tower?&quot; <strong>Don&#39;t be afraid!</strong> Interestingly, these networks not only defeated all opponents in the classification, detection, localization challenges in ImageNet 2015, but were also the main innovation in the best paper of CVPR2016.</p>
+<div align="center"><br>    <img src="/images/resnet/network_growth.jpg" width="40%" height="40%" alt="Network Growth"><br></div>
+
+<a id="more"></a>
+<h2 id="The-Crisis-Degradation-of-Deep-Networks"><a href="#The-Crisis-Degradation-of-Deep-Networks" class="headerlink" title="The Crisis: Degradation of Deep Networks"></a>The Crisis: Degradation of Deep Networks</h2><p>VGG nets proved the beneficial of representation depth of convolutional neural networks, at least within a certan range. However, when Kaiming He et al. tried to deepen some plain networks, the training error and test error stopped decreasing after the network reached a certain depth(which is not surprising) and soon degraded. This is not an overfitting problem, because training errors also increased; nor is it a gradient vanishing problem, because there are some techniques(e.g. batch normalization[4]) that ease the pain.</p>
+<div align="center" class="figure"><br>    <img src="/images/resnet/downgrade.png" width="60%" height="60%" alt="The Downgrade Problem"><br>    Fig.1 The downgrade problem<br><br></div>
+
+<p>What seems to be the cause of this degradation? Obviously, deeper neural networks are more difficult to train, but that doesn&#39;t mean deeper neural networks would yield worse results. To explain this problem, Balduzzi et al.[3] identified shattered gradient problem - as depth increases, gradients in standard feedforward networks increasingly resemble white noise. We&#39;ll talk about that later.</p>
+<h2 id="A-Closer-Look-at-ResNet-The-Residual-Blocks"><a href="#A-Closer-Look-at-ResNet-The-Residual-Blocks" class="headerlink" title="A Closer Look at ResNet: The Residual Blocks"></a>A Closer Look at ResNet: The Residual Blocks</h2><p>As the old saying goes, 千里之行，始于足下. Although ResNets are as deep as a thousand layers, they are built with these basic residual blocks(the right part of the figure). </p>
+<div align="center" class="figure"><br>    <img src="/images/resnet/residual_blocks.png" width="50%" height="50%" alt="Comparison between normal weight layers and residual blocks"><br>    Fig.2 Parts of plain networks and a residual block(or residual unit)<br><br></div>
+
+<h3 id="Skip-Connections"><a href="#Skip-Connections" class="headerlink" title="Skip Connections"></a>Skip Connections</h3><p>In comparison, basic units of plain network models would look like the one on the left: one ReLU function after a weight layer(usually also with biases), repeated several times. Let&#39;s denote the desired underlying mapping(the ideal mapping) of the two layers as \(\mathcal{H}(x)\), and the real mapping as \(\mathcal{F}(x)\). Clearly, the closer \(\mathcal{F}(x)\) is to \(\mathcal{H}(x)\), the better it fits.</p>
+<p>However, He et al. explicitly let these layers fit a residual mapping instead of the desired underlying mapping. This is implemented with &quot;shortcut connections&quot;, which skip one or more layers, simply performing identity mappings and getting added to the outputs of the stacked weight layers. This way, \(\mathcal{F}(x)\) would not try to fit \(\mathcal{H}(x)\), but \(\mathcal{H}(x)-x\). The whole structure(from the identity mapping branch, to merging the branches by the addition operation) are named &quot;residual blocks&quot;. In fact, this block is still a little bit problematic - the output of one residual block is not the input of the next, since there is a ReLU activation function after the addition(It did NOT REALLY keep the identity mapping to the next block!). Therefore, in[2], He et al. fixed the residual blocks by changing the order of operations.</p>
+<div align="center" class="figure"><br>    <img src="/images/resnet/identity_mapping.png" width="30%" height="30%" alt=""><br>    Fig.3 New identity mapping proposed by He et al.<br><br></div>
+
+<p>What&#39;s the point in this? Let&#39;s do a simple analysis. The computation done by the original residual block is: $$y_l=h(x_l)+\mathcal{F}(x_l,\mathcal{W}_l),$$ $$x_{l+1}=f(y_l).$$</p>
+<p>Definitions of symbols:<br>\(x_l\): input features to the \(l\)-th residual block;<br>\(\mathcal{W}_{l}={W_{l,k}|_{1\leq k\leq K}}\): a set of weights(and biases) associated with the \(l\)-th residual unit. \(K\) is the number of layers in this block;<br>\(\mathcal{F}(x,\mathcal{W})\): the residual function, which we talked about earlier. It&#39;s a stack of 2 conv. layers here;<br>\(f(x)\): the activation function. We are using ReLU here;<br>\(h(x)\): identity mapping.</p>
+<p>If \(f(x)\) is also an identity mapping(as if we&#39;re not using any activation function), the first equation would become:<br>$$x_{l+1}=x_l+\mathcal{F}(x_l,\mathcal{W}_l)$$</p>
+<p>Therefore, we can define \(x_L\) recursively of any layer:<br>$$x_L=x_l+\sum_{i=l}^{L}\mathcal{F}(x_i,\mathcal{W}_i)$$</p>
+<p>That&#39;s not the end yet! When it comes to the gradients, according to the chain rules of backpropagation, we have a beautiful definition:<br>$$\frac{\partial{\mathcal{E}}}{\partial{x_l}}=\frac{\partial{\mathcal{E}}}{\partial{x_L}}\frac{\partial{x_L}}{\partial{x_l}}=\frac{\partial{\mathcal{E}}}{\partial{x_L}}\Big(1+\frac{\partial{}}{\partial{x_l}}\sum_{i=l}^{L}\mathcal{F}(x_i,\mathcal{W}_i)\Big)$$</p>
+<p>What does it mean? it means that the information is directly backpropagated to ANY shallower block. This way, the gradients of a layer never vanish or explode even if the weights are too small or too big.</p>
+<h3 id="Identity-Mappings"><a href="#Identity-Mappings" class="headerlink" title="Identity Mappings"></a>Identity Mappings</h3><p>It&#39;s important that we use identity mapping here! Just consider doing a simple modification here, for example, \(h(x)=\lambda_lx_l\)(\(\lambda_l\)) is a modulating scalar). The definition of \(x_L\) and \(\frac{\partial{\mathcal{E}}}{\partial{x_l}}\) woule become:<br>$$x_L=(\prod_{i=l}^{L-1}\lambda_i)x_l+\sum_{i=l}^{L}(\prod_{j=l}^{L-1}\lambda_j)\mathcal{F}(x_i,\mathcal{W}_i)$$<br>$$\frac{\partial{\mathcal{E}}}{\partial{x_l}}=\frac{\partial{\mathcal{E}}}{\partial{x_L}}\Big((\prod_{i=l}^{L-1}\lambda_i)+\frac{\partial{}}{\partial{x_l}}\sum_{i=l}^{L}(\prod_{j=l}^{L-1}\lambda_j)\mathcal{F}(x_i,\mathcal{W}_i)\Big)$$</p>
+<p>For extremely deep neural networks where \(L\) is too large, \(\prod_{j=l}^{L-1}\lambda_j\) could be either too small or too large, causing gradient vanishing or gradient explosion. For\(h(x)\) with complex definitions, the gradient could be extremely complicated, thus losing the advantage of the skip connection. Skip connection works best under the condition where the grey channel in Fig. 3 cover no operations (except the addition) and is clean.</p>
+<p>大道至简.</p>
+<h3 id="Pre-Activation"><a href="#Pre-Activation" class="headerlink" title="Pre-Activation"></a>Pre-Activation</h3><div align="center" class="figure"><br>    <img src="/images/resnet/pre-activation.png" width="50%" height="50%" alt=""><br>    Fig.4 Using asymmetric after-addition is equivalent to constructing a pre-activation residual unit<br><br></div>
+
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p>[1] <a href="http://openaccess.thecvf.com/content_cvpr_2016/papers/He_Deep_Residual_Learning_CVPR_2016_paper.pdf" target="_blank" rel="noopener">He K, Zhang X, Ren S, et al. Deep residual learning for image recognition[C]//Proceedings of the IEEE conference on computer vision and pattern recognition. 2016: 770-778.</a></p>
+<p>[2] <a href="https://arxiv.org/pdf/1603.05027.pdf" target="_blank" rel="noopener">He K, Zhang X, Ren S, et al. Identity mappings in deep residual networks[C]//European Conference on Computer Vision. Springer, Cham, 2016: 630-645.</a></p>
+<p>[3] <a href="https://arxiv.org/pdf/1702.08591.pdf" target="_blank" rel="noopener">Balduzzi D, Frean M, Leary L, et al. The Shattered Gradients Problem: If resnets are the answer, then what is the question?[J]. arXiv preprint arXiv:1702.08591, 2017.</a></p>
+<p>[4] <a href="https://arxiv.org/pdf/1502.03167.pdf" target="_blank" rel="noopener">Ioffe S, Szegedy C. Batch normalization: Accelerating deep network training by reducing internal covariate shift[J]. arXiv preprint arXiv:1502.03167, 2015.</a></p>
+
+        
+    </section>
+</article>
+
+
+
+<div class="comments">
+    <div id="disqus_thread">
+        <p class="comment-tips">国内查看评论需要代理~</p>
+    </div>
+    <script>
+    window.disqus_config = function () {
+        this.language = 'zh';
+        this.page.url = 'http://linkinpark213.com/2018/04/22/resnet/';
+        this.page.title = 'A review of ResNet - Residual Networks';
+        this.page.identifier = '2018/04/22/resnet/';
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://linkinpark213.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+</div>
+        <footer class="footer">
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, Theme by <a href="https://github.com/sanonz/hexo-theme-concise" target="_blank">Concise</a>
+</footer>
+
+<script type="text/javascript" src="//s13.cnzz.com/z_stat.php?id=1234567890&amp;web_id=1234567890"></script>
+
+
+    </div>
+
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
+    
+    <script type="text/javascript" src="/js/scrollspy.min.js"></script>
+    
+    <script type="text/javascript">
+        $(function() {
+            var nodes = {
+                nav: $('#nav'),
+                aside: $('#aside'),
+                navTags: $('#nav-tags')
+            };
+
+            $('#open-panel, #aside-mask').on('click', function() {
+                nodes.aside.toggleClass('panel-show');
+            });
+            $('#nav-tag').on('click', function(event) {
+                event.preventDefault();console.log(nodes.navTags.attr('class'))
+                nodes.navTags.toggleClass('tag-show');console.log(nodes.navTags.attr('class'))
+            })/*.hover(function() {
+                nodes.navTags.addClass('tag-show');
+            }, function() {
+                nodes.navTags.removeClass('tag-show');
+            });*/
+
+            
+            $(document.body).scrollspy({target: '#aside-inner'});
+            
+        });
+    </script>
+
+</body>
+</html>
