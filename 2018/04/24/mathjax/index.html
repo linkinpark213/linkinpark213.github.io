@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+
+    
+
+    
+
+    <title>MathJax - Use Math in Hexo, Just Like Tex! (Including Problem Solutions) | Linkin213&#39;s Park</title>
+    <meta name="author" content="Harper Long" />
+    <meta name="version" content="1.0.0" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="
+
+Sometimes you may want to explain some algorithms or principles with beautiful formulae in your blog. How to do this? Edit them in Microsoft Word, take a screenshot, crop it and put it in the blog post? When you finish your article and find out tha" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+    <meta name="baidu-site-verification" content="F0CXvmUgA9" />
+
+    
+    
+    <link rel="icon" href="/images/favicon.png">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <div class="app">
+        <header class="header clearfix">
+    <div id="nav" class="nav">
+    <button id="open-panel" class="open-panel"><i class="icon-library"></i></button>
+
+    <nav class="nav-inner">
+
+        
+        
+        <li class="nav-item">
+            <a class="nav-link" href="/">首页</a>
+        </li>
+        
+        
+        
+        <li class="nav-item nav-item-tag">
+            <a id="nav-tag" class="nav-link" href="#">标签</a>
+            <div id="nav-tags" class="nav-tag-wrap">
+                <i class="nav-tag-arrow"></i>
+                
+  <div class="widget-wrap">
+    <h3 class="widget-title">
+        <i class="icon-tag vm"></i>
+        <span class="vm">标签</span>
+    </h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blogging/">Blogging</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Computer-Vision/">Computer Vision</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Deep-Learning/">Deep Learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Other/">Other</a></li></ul>
+    </div>
+  </div>
+
+
+            </div>
+        </li>
+        
+        
+        
+        <li class="nav-item">
+            <a class="nav-link" href="/archives">归档</a>
+        </li>
+        
+        
+        
+        <li class="nav-item">
+            <a class="nav-link" href="/atom.xml">订阅</a>
+        </li>
+        
+        
+        
+        <li class="nav-item">
+            <a class="nav-link" href="/about">关于</a>
+        </li>
+        
+        
+        
+
+    </nav>
+</div>
+
+    <aside id="aside" class="aside">
+    <div id="aside-mask" class="aside-mask"></div>
+    <div id="aside-inner" class="aside-inner">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit"><i class="icon-search-stroke"></i></button><input type="hidden" name="sitesearch" value="http://linkinpark213.com"></form>
+
+        
+        
+        
+        
+
+        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Installation"><span class="toc-number">1.</span> <span class="toc-text">1 Installation</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-With-npm-For-those-using-Hexo-like-me"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 With npm (For those using Hexo like me)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-Or-by-inserting-a-snippet-in-your-HTML-code"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 Or by inserting a snippet in your HTML code</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Usage"><span class="toc-number">2.</span> <span class="toc-text">2 Usage</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Problems-when-using-MathJax-with-Hexo-amp-Solutions"><span class="toc-number">3.</span> <span class="toc-text">3 Problems when using MathJax with Hexo &amp; Solutions</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-Subscript-symbol-quot-quot-gets-mistaken-as-Markdown-emphasize-symbol"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 Subscript symbol &quot;_&quot; gets mistaken as Markdown emphasize symbol</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-To-be-continued"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 To be continued</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+</header>
+
+        <div id="content" class="content"><article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            MathJax - Use Math in Hexo, Just Like Tex! (Including Problem Solutions)
+        </h1>
+        
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="/2018/04/24/mathjax/">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2018-04-24T06:43:41.000Z" itemprop="datePublished">2018-04-24</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/Blogging/">Blogging</a>
+</div>
+
+
+        </div>
+        
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+<p>Sometimes you may want to explain some algorithms or principles with beautiful formulae in your blog. How to do this? Edit them in Microsoft Word, take a screenshot, crop it and put it in the blog post? When you finish your article and find out that you missed a symbol in the pictures - oh man, gotta repeat that again? Don&#39;t worry! Throw away those screenshots now. A beautiful math display engine - MathJax allows you to code math like a coder.</p>
+<div style="font-size: 1.2em"><br>$$\mathcal{C}\phi \delta e \mathfrak{M}\alpha th \mathit{I}n \mathcal{H}ex\sigma \mathbb{N}o\omega!$$<br></div>
+
+<h2 id="1-Installation"><a href="#1-Installation" class="headerlink" title="1 Installation"></a>1 Installation</h2><h3 id="1-1-With-npm-For-those-using-Hexo-like-me"><a href="#1-1-With-npm-For-those-using-Hexo-like-me" class="headerlink" title="1.1 With npm (For those using Hexo like me)"></a>1.1 With npm (For those using Hexo like me)</h3><p>First, install <em>hexo-math</em> in your Hexo blog directory.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-math --save</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>Then, add math configurations in your <em>_config.yml</em> file.<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">math:</span></span><br><span class="line"><span class="attr">  engine:</span> <span class="string">'mathjax'</span></span><br></pre></td></tr></table></figure></p>
+<p>Finally, also edit your <em>_config.yml</em> file in the theme directory.<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">mathjax:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  per_page:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">  cdn:</span> <span class="string">//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="1-2-Or-by-inserting-a-snippet-in-your-HTML-code"><a href="#1-2-Or-by-inserting-a-snippet-in-your-HTML-code" class="headerlink" title="1.2 Or by inserting a snippet in your HTML code"></a>1.2 Or by inserting a snippet in your HTML code</h3><p>Maybe you don&#39;t have to use math in every blog post. If so, insert the following snippet in your Markdown file also works.<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML'</span> <span class="attr">async</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="2-Usage"><a href="#2-Usage" class="headerlink" title="2 Usage"></a>2 Usage</h2><p>MathJax supports the same grammar that LaTeX does. To learn more about LaTeX, please refer to Chapter 3 of <a href="https://tobi.oetiker.ch/lshort/lshort.pdf" target="_blank" rel="noopener">The Not So Short<br>Introduction to LATEX</a>(CN version also available <a href="http://www.mohu.org/info/lshort-cn.pdf" target="_blank" rel="noopener">here</a>).</p>
+<p>Use a &quot;\\(&quot; and a &quot;\\)&quot; to insert a formula in the line(they decide the boundary of the formula), or two &quot;$$&quot; to insert one that occupy a new line. I&#39;ll give a few examples below.</p>
+<p>\(\mathcal{F}(x)=\mathcal{H}(x)-x\)<br><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\mathcal&#123;F&#125;(x)=\mathcal&#123;H&#125;(x)-x$$</span><br></pre></td></tr></table></figure></p>
+<p>\(E=mc^2\)<br><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$E=mc^2$$</span><br></pre></td></tr></table></figure></p>
+<p>\(\lim_{n\rightarrow \infty}(1+2^n+3^n)^\frac{1}{x+\sin n}\)<br><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\lim_&#123;n\rightarrow \infty&#125;(1+2^n+3^n)^\frac&#123;1&#125;&#123;x+\sin n&#125;$$</span><br></pre></td></tr></table></figure></p>
+<p>\(\mathcal{C}\phi \delta e \mathfrak{M}\alpha th \mathit{I}n \mathcal{H}ex\sigma \mathbb{N}o\omega!\)<br><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\mathcal&#123;C&#125;\phi \delta e \mathfrak&#123;M&#125;\alpha th \mathit&#123;I&#125;n \mathcal&#123;H&#125;ex\sigma \mathbb&#123;N&#125;o\omega!$$</span><br></pre></td></tr></table></figure></p>
+<h2 id="3-Problems-when-using-MathJax-with-Hexo-amp-Solutions"><a href="#3-Problems-when-using-MathJax-with-Hexo-amp-Solutions" class="headerlink" title="3 Problems when using MathJax with Hexo &amp; Solutions"></a>3 Problems when using MathJax with Hexo &amp; Solutions</h2><p>This list will be appended whenever I find any more.</p>
+<h3 id="3-1-Subscript-symbol-quot-quot-gets-mistaken-as-Markdown-emphasize-symbol"><a href="#3-1-Subscript-symbol-quot-quot-gets-mistaken-as-Markdown-emphasize-symbol" class="headerlink" title="3.1 Subscript symbol &quot;_&quot; gets mistaken as Markdown emphasize symbol"></a>3.1 Subscript symbol &quot;_&quot; gets mistaken as Markdown emphasize symbol</h3><p>This is a tough problem. Hexo renderer would first render the .md file into a .html file, and the MathJax script will only work on the .html file. Therefore, when there are multiple subscript symbols, they might be rendered as &lt;em&gt;&lt;/em&gt; tags. </p>
+<p>For example: when you actually need a full-line formula \(x_{i+1}+y_j\), perhaps you&#39;ll get a &quot;$$x<em>{i+1}+y</em>j$$&quot; instead. Look into the HTML code and you&#39;ll understand why.</p>
+<p>My solution for now, is giving up this Markdown emphasize symbol, since both &quot;_&quot; and &quot;*&quot; can be used as emphasize tags, and the alternative symbol &quot;*&quot; will also work if we remove &quot;_&quot;. Using &quot;\_&quot; also works, but it would be frequently used(while &quot;*&quot; isn&#39;t), thus turning our math code into mess code.</p>
+<p>How do we do this? Bravely look into the <em>node_modules</em> directory and find the renderer of the Hexo engine. My renderer is <em>marked</em>, which is the default for Hexo. There is a file named <em>marked.js</em> inside <em>node_modules/marked/lib/</em> directory. You can find two appearances of &quot;em:&quot;. Like this:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> inline = &#123;</span><br><span class="line">  ...</span><br><span class="line">  em: <span class="regexp">/^\b_((?:[^_]|__)+?)_\b|^\*((?:\*:\*|[\s\S])+?)\*(?!\*)/</span>,</span><br><span class="line">  ...</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>and<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">inline.pedantic = merge(&#123;&#125;, inline.normal, &#123;</span><br><span class="line">  ...</span><br><span class="line">  em: <span class="regexp">/^_(?=\S)([\s\S]*?\S)_(?!_)|^\*(?=\S)([\s\S]*?\S)\*(?!\*)/</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>Modify the regular expression after them - remove the one about &quot;_&quot;s and leave the one about &quot;*&quot;s. The new version would be:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> inline = &#123;</span><br><span class="line">  ...</span><br><span class="line">  em: <span class="regexp">/^\*((?:\*\*|[\s\S])+?)\*(?!\*)/</span>,</span><br><span class="line">  ...</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>and<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">inline.pedantic = merge(&#123;&#125;, inline.normal, &#123;</span><br><span class="line">  ...</span><br><span class="line">  em: <span class="regexp">/^\*(?=\S)([\s\S]*?\S)\*(?!\*)/</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>From now on, you can use &quot;_&quot; as the subscript in MathJax freely. You don&#39;t have to worry about its becoming &lt;em&gt;&lt;/em&gt; tags anymore.</p>
+<h3 id="3-2-To-be-continued"><a href="#3-2-To-be-continued" class="headerlink" title="3.2 To be continued"></a>3.2 To be continued</h3><p>If you encounter other issues while using MathJax with Hexo(with or without a solution), feel free to leave a comment below!</p>
+
+        
+    </section>
+</article>
+
+
+
+<div class="comments">
+    <div id="disqus_thread">
+        <p class="comment-tips">国内查看评论需要代理~</p>
+    </div>
+    <script>
+    window.disqus_config = function () {
+        this.language = 'zh';
+        this.page.url = 'http://linkinpark213.com/2018/04/24/mathjax/';
+        this.page.title = 'MathJax - Use Math in Hexo, Just Like Tex! (Including Problem Solutions)';
+        this.page.identifier = '2018/04/24/mathjax/';
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://linkinpark213.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+</div>
+        <footer class="footer">
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, Theme by <a href="https://github.com/sanonz/hexo-theme-concise" target="_blank">Concise</a>
+</footer>
+
+<script type="text/javascript" src="//s13.cnzz.com/z_stat.php?id=1234567890&amp;web_id=1234567890"></script>
+
+
+    </div>
+
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
+    
+    <script type="text/javascript" src="/js/scrollspy.min.js"></script>
+    
+    <script type="text/javascript">
+        $(function() {
+            var nodes = {
+                nav: $('#nav'),
+                aside: $('#aside'),
+                navTags: $('#nav-tags')
+            };
+
+            $('#open-panel, #aside-mask').on('click', function() {
+                nodes.aside.toggleClass('panel-show');
+            });
+            $('#nav-tag').on('click', function(event) {
+                event.preventDefault();console.log(nodes.navTags.attr('class'))
+                nodes.navTags.toggleClass('tag-show');console.log(nodes.navTags.attr('class'))
+            })/*.hover(function() {
+                nodes.navTags.addClass('tag-show');
+            }, function() {
+                nodes.navTags.removeClass('tag-show');
+            });*/
+
+            
+            $(document.body).scrollspy({target: '#aside-inner'});
+            
+        });
+    </script>
+
+</body>
+</html>
