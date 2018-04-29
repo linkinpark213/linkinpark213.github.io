@@ -12,8 +12,9 @@
     <meta name="version" content="1.0.0" />
     <meta name="keywords" content="" />
     <meta name="description" content="When blogging with Hexo, every time I type a single quotation mark(also called apostrophe) like this:1&amp;apos;
-, Hexo would convert it to a symbol like this1’
-You would say that this is also an apotrophe, but it really looks UNBEARABLE in the articles." />
+, Hexo would convert it to a symbol like this
+1’
+You would say that this is also an apotrophe, but it really looks UNBEARABLE in the articles" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
     <meta name="baidu-site-verification" content="F0CXvmUgA9" />
@@ -156,7 +157,8 @@ You would say that this is also an apotrophe, but it really looks UNBEARABLE in 
         
         
         <p>When blogging with Hexo, every time I type a single quotation mark(also called apostrophe) like this:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;</span><br></pre></td></tr></table></figure></p>
-<p>, Hexo would convert it to a symbol like this<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">’</span><br></pre></td></tr></table></figure></p>
+<p>, Hexo would convert it to a symbol like this
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">’</span><br></pre></td></tr></table></figure></p>
 <p>You would say that this is also an apotrophe, but it really looks UNBEARABLE in the articles. It&#39;s been a problem bothering me for more than a month.(I&#39;m not saying that this is the reason for not updating my blog, but I don&#39;t mind if you think so!)</p>
 <a id="more"></a>
 <p><img src="/images/smartypants/apostrophe.png" alt="apostrophe"></p>
@@ -173,7 +175,7 @@ You would say that this is also an apotrophe, but it really looks UNBEARABLE in 
 <p>Since <em>hexo-renderer-marked</em> is installed in the blog&#39;s <em>node_modules</em> directory(may also be in your Node.js directory if installed globally), isn&#39;t it possible that we change its own configurations? I looked at the <em>index.js</em> file in the <em>node_modules/hexo-renderer-marked/</em> directory. There you are, smartypants!</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">hexo.config.marked = assign(&#123;</span><br><span class="line">  gfm: <span class="literal">true</span>,</span><br><span class="line">  pedantic: <span class="literal">false</span>,</span><br><span class="line">  sanitize: <span class="literal">false</span>,</span><br><span class="line">  tables: <span class="literal">true</span>,</span><br><span class="line">  breaks: <span class="literal">true</span>,</span><br><span class="line">  smartLists: <span class="literal">true</span>,</span><br><span class="line">  smartypants: <span class="literal">true</span>,</span><br><span class="line">  modifyAnchors: <span class="string">''</span>,</span><br><span class="line">  autolink: <span class="literal">true</span></span><br><span class="line">&#125;, hexo.config.marked);</span><br></pre></td></tr></table></figure>
 <p>Now you know what to do.</p>
-<p>Aaaaaaaaaaaaaaaand many thanks to Xizi Wu, the artist of my new avatar! I love it!<br><img src="/images/long_nobg.png" alt="Harper Long by Xizi Wu"></p>
+<p>Aaaaaaaaaaaaaaaand many thanks to Xizi Wu, the artist of my new avatar! I love it<br><img src="/images/long_nobg.png" alt="Harper Long by Xizi Wu"></p>
 
         
         

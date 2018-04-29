@@ -14,6 +14,7 @@ ul,
 ol,
 li,
 p,
+em,
 blockquote,
 pre,
 hr,
@@ -66,6 +67,7 @@ abbr {
 i,
 cite,
 var,
+em,
 address,
 dfn {
   font-style: normal;
@@ -1669,6 +1671,12 @@ body {
     padding: 4px 12px;
     font-size: 13px;
   }
+}
+em {
+  color: #d14;
+  background-color: #f7f7f9;
+  border: 1px solid #e1e1e8;
+  padding: 2px 4px;
 }
 .archive-year {
   color: #333;

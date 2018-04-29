@@ -126,7 +126,7 @@
     <header class="article-header">
         
         <h1 itemprop="name">
-            <a href="/2018/04/26/diy-resnet/"><i class="icon-document"></i> A Painless Tensorflow Basic Tutorial - Take ResNet-56 as an Example</a>
+            <a href="/2018/04/29/diy-resnet/"><i class="icon-document"></i> A Painless Tensorflow Basic Tutorial - Take ResNet-56 as an Example</a>
         </h1>
         
         
@@ -140,7 +140,7 @@
 TensorFlow is a powerful open-source deep learning framework, supporting various languages including Python. However, its APIs are far too complicated for a beginner in deep learning(especially those who are new to Python). In order to ease the pain of having to understand the mess of various elements in TensorFlow computation graphs, I made this tutorial to help beginners take the first bite of the cake.<br>ResNets are one of the greatest works in the deep learning field. Although they look scary with extreme depths, it&#39;s not a hard job to implement one. Now let&#39;s build one of the simplest ResNets - ResNet-56, and train it on the CIFAR-10 dataset.<br></p>
         
         <p class="article-more-link">
-            <a href="/2018/04/26/diy-resnet/#more">
+            <a href="/2018/04/29/diy-resnet/#more">
                 <span class="vm">Read More</span>
                 <i class="icon-arrow-double-right vm"></i>    
             </a>
@@ -168,7 +168,9 @@ TensorFlow is a powerful open-source deep learning framework, supporting various
 
 <h2 id="0-Introduction"><a href="#0-Introduction" class="headerlink" title="0 Introduction"></a>0 Introduction</h2><p>Deep learning researchers have been constructing skyscrapers in recent years. Especially, VGG nets and GoogLeNet have pushed the depths of convolutional networks to the extreme. But questions remain: if time and money aren&#39;t problems, are deeper networks always performing better? Not exactly.</p>
 <p>When residual networks were proposed, researchers around the world was stunned by its depth. &quot;Jesus Christ! Is this a neural network or the Dubai Tower?&quot; But <strong>don&#39;t be afraid!</strong> These networks are deep but the structures are simple. Interestingly, these networks not only defeated all opponents in the classification, detection, localization challenges in ImageNet 2015, but were also the main innovation in the best paper of CVPR2016.</p>
-<div align="center"><br>    <img src="/images/resnet/network_growth.jpg" width="40%" height="40%" alt="Network Growth"><br></div>
+<div align="center">
+    <img src="/images/resnet/network_growth.jpg" width="40%" height="40%" alt="Network Growth">
+</div>
         
         <p class="article-more-link">
             <a href="/2018/04/22/resnet/#more">

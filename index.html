@@ -126,16 +126,16 @@
     <header class="article-header">
         
         <h1 itemprop="name">
-            <a href="/2018/04/26/diy-resnet/"><i class="icon-document"></i> A Painless Tensorflow Basic Tutorial - Take ResNet-56 as an Example</a>
+            <a href="/2018/04/29/diy-resnet/"><i class="icon-document"></i> A Painless Tensorflow Basic Tutorial - Take ResNet-56 as an Example</a>
         </h1>
         
         
         <div class="article-meta clearfix">
-            <a class="article-date" href="/2018/04/26/diy-resnet/">
+            <a class="article-date" href="/2018/04/29/diy-resnet/">
     
     <i class="icon-calendar"></i>
     
-    <time datetime="2018-04-26T04:38:51.000Z" itemprop="datePublished">2018-04-26</time>
+    <time datetime="2018-04-29T14:05:43.000Z" itemprop="datePublished">2018-04-29</time>
 </a>
 
             
@@ -157,7 +157,7 @@
 TensorFlow is a powerful open-source deep learning framework, supporting various languages including Python. However, its APIs are far too complicated for a beginner in deep learning(especially those who are new to Python). In order to ease the pain of having to understand the mess of various elements in TensorFlow computation graphs, I made this tutorial to help beginners take the first bite of the cake.<br>ResNets are one of the greatest works in the deep learning field. Although they look scary with extreme depths, it&#39;s not a hard job to implement one. Now let&#39;s build one of the simplest ResNets - ResNet-56, and train it on the CIFAR-10 dataset.<br></p>
         
         <p class="article-more-link">
-            <a href="/2018/04/26/diy-resnet/#more">
+            <a href="/2018/04/29/diy-resnet/#more">
                 <span class="vm">Read More</span>
                 <i class="icon-arrow-double-right vm"></i>    
             </a>
@@ -201,7 +201,9 @@ TensorFlow is a powerful open-source deep learning framework, supporting various
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
 
 <p>Sometimes you may want to explain some algorithms or principles with beautiful formulae in your blog. How to do this? Edit them in Microsoft Word, take a screenshot, crop it and put it in the blog post? When you finish your article and find out that you missed a symbol in the pictures - oh man, gotta repeat that again? Stop using those images now! A beautiful math display engine - MathJax allows you to code math like a coder.</p>
-<div style="font-size: 1.2em"><br>$$\mathcal{C}\phi \delta e \mathfrak{M}\alpha th \mathit{I}n \mathcal{H}ex\sigma \mathbb{N}o\omega!$$<br></div>
+<div style="font-size: 1.2em">
+$$\mathcal{C}\phi \delta e \mathfrak{M}\alpha th \mathit{I}n \mathcal{H}ex\sigma \mathbb{N}o\omega!$$
+</div>
         
         <p class="article-more-link">
             <a href="/2018/04/24/mathjax/#more">
@@ -249,7 +251,9 @@ TensorFlow is a powerful open-source deep learning framework, supporting various
 
 <h2 id="0-Introduction"><a href="#0-Introduction" class="headerlink" title="0 Introduction"></a>0 Introduction</h2><p>Deep learning researchers have been constructing skyscrapers in recent years. Especially, VGG nets and GoogLeNet have pushed the depths of convolutional networks to the extreme. But questions remain: if time and money aren&#39;t problems, are deeper networks always performing better? Not exactly.</p>
 <p>When residual networks were proposed, researchers around the world was stunned by its depth. &quot;Jesus Christ! Is this a neural network or the Dubai Tower?&quot; But <strong>don&#39;t be afraid!</strong> These networks are deep but the structures are simple. Interestingly, these networks not only defeated all opponents in the classification, detection, localization challenges in ImageNet 2015, but were also the main innovation in the best paper of CVPR2016.</p>
-<div align="center"><br>    <img src="/images/resnet/network_growth.jpg" width="40%" height="40%" alt="Network Growth"><br></div>
+<div align="center">
+    <img src="/images/resnet/network_growth.jpg" width="40%" height="40%" alt="Network Growth">
+</div>
         
         <p class="article-more-link">
             <a href="/2018/04/22/resnet/#more">
@@ -342,7 +346,8 @@ TensorFlow is a powerful open-source deep learning framework, supporting various
     <section class="article-body markdown-body" id="article-body">
         
         <p>When blogging with Hexo, every time I type a single quotation mark(also called apostrophe) like this:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;</span><br></pre></td></tr></table></figure></p>
-<p>, Hexo would convert it to a symbol like this<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">’</span><br></pre></td></tr></table></figure></p>
+<p>, Hexo would convert it to a symbol like this
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">’</span><br></pre></td></tr></table></figure></p>
 <p>You would say that this is also an apotrophe, but it really looks UNBEARABLE in the articles. It&#39;s been a problem bothering me for more than a month.(I&#39;m not saying that this is the reason for not updating my blog, but I don&#39;t mind if you think so!)</p>
         
         <p class="article-more-link">
