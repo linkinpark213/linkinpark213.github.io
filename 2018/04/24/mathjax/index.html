@@ -192,26 +192,25 @@ $$\begin{split}
 
 
 
-<div class="comments">
-    <div id="disqus_thread">
-        <p class="comment-tips">国内查看评论需要代理~</p>
-    </div>
-    <script>
-    window.disqus_config = function () {
-        this.language = 'zh';
-        this.page.url = 'http://linkinpark213.com/2018/04/24/mathjax/';
-        this.page.title = 'MathJax - Use Math in Hexo, Just Like Tex! (Including Problem Solutions)';
-        this.page.identifier = '2018/04/24/mathjax/';
-    };
-    (function() { // DON'T EDIT BELOW THIS LINE
-        var d = document, s = d.createElement('script');
-        s.src = 'https://linkinpark213.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
+<!-- Gitalk start  -->
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script> 
+<div id="gitalk-container"></div>     <script type="text/javascript">
+    var gitalk = new Gitalk({
+
+		clientID: `c4adccc75586706f480a`,
+		clientSecret: `cd36866f06c4b1cf832570bb669cdb75ab121ddd`,
+		repo: `linkinpark213.github.io`,
+		owner: 'linkinpark213',
+		admin: ['linkinpark213'],
+		id: 'window.location.pathname',
+    
+    });
+    gitalk.render('gitalk-container');
+</script> 
+
+<!-- Gitalk end -->
 
 </div>
         <footer class="footer">
