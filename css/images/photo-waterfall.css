@@ -1,0 +1,40 @@
+.ImageGrid {
+    width: 100%;
+    max-width: 1080px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.card {
+    width: 360px;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+    left: 0;
+}
+
+.ImageInCard {
+    height: auto;
+    line-height: 0;
+}
+
+.ImageInCard img {
+    height: auto;
+    width: 100%;
+    padding: 0 0 0 0;
+    position: relative;
+}
+
+.TextInCard {
+    width: 100%;
+    max-height: 100px;
+    line-height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    font-size: 1em;
+    opacity: 0;
+    transition: all ease 500ms;
+    position: absolute;
+    bottom: 0;
+    padding: 10%;
+}

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://linkinpark213.com/"/>
-  <updated>2018-04-29T14:05:43.898Z</updated>
+  <updated>2018-07-26T02:52:54.429Z</updated>
   <id>http://linkinpark213.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello New World!</title>
+    <link href="http://linkinpark213.com/2018/07/26/hello-osaka/"/>
+    <id>http://linkinpark213.com/2018/07/26/hello-osaka/</id>
+    <published>2018-07-26T02:12:52.000Z</published>
+    <updated>2018-07-26T02:52:54.429Z</updated>
+    
+    <content type="html"><![CDATA[<p><link rel="stylesheet" type="text/css" href="/css/jquery.fancybox.min.css"></p><h2 id="0-Scenery"><a href="#0-Scenery" class="headerlink" title="0 Scenery"></a>0 Scenery</h2><div align="center" class="figure"><img src="/images/hello-osaka/osaka-1.jpg" alt="Yoshida-3-Chome" width="80%"><br>Yoshida 3-Chome</div><a id="more"></a><p><div align="center" class="figure"><img src="/images/hello-osaka/osaka-2.jpg" alt="ResNet-56" width="80%"></div></p><p>Yoshida 3-Chome<img src="/images/hello-osaka/osaka-2.jpg" alt="ha?"><img src="/images/hello-osaka/osaka-3.jpg" alt="ha?"><img src="/images/hello-osaka/osaka-4.jpg" alt="ha?"><img src="/images/hello-osaka/osaka-5.jpg" alt="ha?"><img src="/images/hello-osaka/osaka-6.jpg" alt="ha?"><img src="/images/hello-osaka/osaka-7.jpg" alt="ha?"><img src="/images/hello-osaka/osaka-8.jpg" alt="ha?"><img src="/images/hello-osaka/osaka-9.jpg" alt="ha?"><img src="/images/hello-osaka/osaka-10.jpg" alt="ha?"><img src="/images/hello-osaka/osaka-11.jpg" alt="ha?"><img src="/images/hello-osaka/osaka-12.jpg" alt="ha?"><img src="/images/hello-osaka/osaka-13.jpg" alt="ha?"><img src="/images/hello-osaka/osaka-14.jpg" alt="ha?"><img src="/images/hello-osaka/osaka-15.jpg" alt="ha?"><img src="/images/hello-osaka/osaka-16.jpg" alt="ha?"><img src="/images/hello-osaka/osaka-17.jpg" alt="ha?"><img src="/images/hello-osaka/osaka-18.jpg" alt="ha?"><img src="/images/hello-osaka/osaka-19.jpg" alt="ha?"><img src="/images/hello-osaka/osaka-20.jpg" alt="ha?"></p><script src="/js/jquery.fancybox.min.js"></script>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/css/jquery.fancybox.min.css&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;0-Scenery&quot;&gt;&lt;a href=&quot;#0-Scenery&quot; class=&quot;headerlink&quot; title=&quot;0 Scenery&quot;&gt;&lt;/a&gt;0 Scenery&lt;/h2&gt;&lt;div align=&quot;center&quot; class=&quot;figure&quot;&gt;
+&lt;img src=&quot;/images/hello-osaka/osaka-1.jpg&quot; alt=&quot;Yoshida-3-Chome&quot; width=&quot;80%&quot;&gt;&lt;br&gt;Yoshida 3-Chome
+&lt;/div&gt;
+    
+    </summary>
+    
+    
+      <category term="Travel Gallery" scheme="http://linkinpark213.com/tags/Travel-Gallery/"/>
+    
+  </entry>
   
   <entry>
     <title>A Painless Tensorflow Basic Tutorial - Take ResNet-56 as an Example</title>
