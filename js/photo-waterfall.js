@@ -23,7 +23,7 @@ photo_waterfall = {
             li = '<a data-fancybox="gallery" href="' + this.folder + filename + '" class="card" pic-num="' + count + '">' +
                 '<div class="ImageInCard">' +
                 '<div>' +
-                '<img src="' + this.folder + "thumbnail/" + filename + '"/>' +
+                '<img src="' + this.folder + "thumbnail/" + filename + '" onload="photo_waterfall.minigrid();"/>' +
                 '</div>' +
                 '</div>' +
                 '<div class="TextInCard">' + description + '</div>' +
