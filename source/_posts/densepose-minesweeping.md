@@ -181,6 +181,10 @@ Then run `make ops` again, and `python detectron/tests/test_zero_even_op.py` aga
 After fixing this issue, my DensePose passed tests and was running flawlessly. If any more issues remain, don't hesitate to comment here~
 
 
+<div align="center">
+    <img src="/images/densepose-ms/ican.jpg" width="15%" height="15%" alt="I just can!">
+</div>
+
 ## 0 Motivation
 Starting from this post, I decide to keep a record (tag: MineSweeping) of the issues I meet while working with environments and also their solutions. 
 
