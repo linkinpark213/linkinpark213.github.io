@@ -1,0 +1,75 @@
+<article class="article" itemscope itemprop="blogPost">
+    <% if( post.title ) { %>
+    <header class="article-header">
+        <% if( view ) { %>
+        <h1 itemprop="name">
+            <%= post.title %>
+        </h1>
+        <% } else { %>
+        <h1 itemprop="name">
+            <a href="<%- url_for(post.path) %>"><i class="icon-document"></i> <%= post.title %></a>
+        </h1>
+        <% } %>
+        <% if( is_post() || is_home() ) { %>
+        <div class="article-meta clearfix">
+            <%- partial('post/date', {icon: true, date_format: null}) %>
+            <%- partial('post/tags') %>
+        </div>
+        <% } %>
+    </header>
+    <% } %>
+    <section class="article-body markdown-body" id="article-body">
+        <% if( !view && post.excerpt ) { %>
+        <%- post.excerpt %>
+        <% if( theme.excerpt_link ) { %>
+        <p class="article-more-link">
+            <a href="<%- url_for(post.path) %>#more">
+                <span class="vm"><%= theme.excerpt_link %></span>
+                <i class="icon-arrow-double-right vm"></i>    
+            </a>
+        </p>
+        <% } %>
+        <% } else { %>
+        <% if( post.langs && post.langs.length > 1 ) { %>
+        <div align="right">
+        <%= __('lang') %>
+        <select id="lang_select">
+        <% post.langs.forEach(function(lang){ %>
+            <option value="<%= lang %>"><%= lang %></option>
+        <% }); %>
+        </select>
+        </div>
+        <%= __('lang_prompt') %>
+        <% } %>
+        <%- post.content %>
+        <% if( post.langs && post.langs.length > 1 ) { %>
+        <script>
+            article = document.getElementById('article-body');
+            confirm_lang = function(lang) {
+                langs = [<% post.langs.forEach(function(lang){ %>"<%=lang %>",<% }); %>];
+                for (var i=0; i < langs.length; i++) {
+                    if(lang == langs[i]) return lang;
+                }
+                return 'en-us';
+            }
+            change_language = function(lang) {
+                article = document.getElementById('article-body');
+                l = confirm_lang(lang);
+                for (var i=0; i < article.childElementCount; i++) {
+                    item = article.children[i];
+                    if(item.lang && item.lang!=l) {
+                        item.style.display="none";
+                    } else {
+                        item.style.display=""
+                    }
+                }
+            }
+            change_language("<%=__('locale') %>");
+            document.getElementById('lang_select').addEventListener('change', function(e){
+                change_language(e.target.value);
+            });
+        </script>
+        <% } %>
+        <% } %>
+    </section>
+</article>

@@ -1,0 +1,24 @@
+home: ホーム
+categories: カテゴリーズ
+search: サーチ
+tags: タグ
+tagcloud: タグクラウド
+tweets: Tweets
+prev: 前
+next: 次
+comment: コメント
+archive_a: アーカイブ
+archive_b: "アーカイブ: %s"
+page: ページ %d
+recent_posts: 最近の投稿
+newer: 新しい
+older: より古い
+share: シェア
+powered_by: Powered by
+rss_feed: RSSフィード
+category: カテゴリー
+tag: タグ
+about: 私について
+lang: 言語
+lang_prompt: (この投稿は別の言語の翻訳バーションもあります)
+locale: ja-jp

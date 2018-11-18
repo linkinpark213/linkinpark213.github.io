@@ -1,6 +1,7 @@
 ---
 title: Cheers for the 8th International linkinpark213 Day!
 tag: Other
+date: 2018-02-13 18:40:21
 ---
 
 Cheers for the 8th International linkinpark213 Day!

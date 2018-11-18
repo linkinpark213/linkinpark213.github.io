@@ -1,0 +1,57 @@
+# Header
+menu:
+  home: /
+  # ML: categories/machine-learning
+  # CV: categories/computer-vision
+  tags: javascript:;
+  archive_a: archives
+  rss_feed: atom.xml
+  about: about
+
+# Content
+excerpt_link: Read More
+
+# Sidebar
+author:
+  name: Harper Long
+  work: A naive student
+  location: Hebei, China
+  avatar_url: /images/avatar.png
+widgets:
+- category
+- tag
+- tagcloud
+- archive
+- recent_posts
+
+# display widgets at the bottom of index pages (pagination == 2)
+index_widgets:
+- category
+- tagcloud
+- archive
+
+# widget behavior
+# show_count: false
+# archive_type: 'monthly'
+
+# Disqus 
+disqus:
+  enable: true
+  shortname: linkinpark213    #your name
+  # count: true
+
+# 友盟统计
+umeng:
+  prefix: s13
+  id: 1234567890
+
+# Miscellaneous
+google_analytics:
+favicon: /images/favicon.png
+twitter:
+google_plus:
+fb_admins:
+fb_app_id:
+
+marked:
+  smartypants: false

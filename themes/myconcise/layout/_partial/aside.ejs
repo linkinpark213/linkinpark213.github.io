@@ -1,0 +1,38 @@
+<aside id="aside" class="aside">
+    <div id="aside-mask" class="aside-mask"></div>
+    <div id="aside-inner" class="aside-inner">
+        <%- search_form({button: '<i class="icon-search-stroke"></i>'}) %>
+
+        <% var t = null %>
+        <% if( is_post() ) { %>
+        <% t = toc(page.content) %>
+        <% } %>
+
+        <% if( t ) { %>
+        <%- t %>
+        <% } else { %>
+        <div class="author-meta">
+            <% if( theme.author.avatar_url ) { %>
+            <div class="author-avatar">
+                <a href="<%- url_for() %>">
+                    <img src="<%= theme.author.avatar_url %>" title="Avatar By Xizi Wu">
+                </a>
+            </div>
+            <% } %>
+            <div class="author-name"><%= theme.author.name %></div>
+            <div class="author-work"><%- theme.author.work %></div>
+            <div class="author-location">
+                <i class="icon-location vm"></i>
+                <span class="vm"><%= theme.author.location %></span>
+            </div>
+            <div class="author-thread-wrap">
+                <div class="author-threads clearfix">
+                    <a class="thread-item" href="https://github.com/linkinpark213" target="_blank"><i class="icon-github"></i></a>
+                    <a class="thread-item" href="mailto:linkinpark213@outlook.com" target="_blank"><i class="icon-mail"></i></a>
+                    <a class="thread-item" href="https://twitter.com/linkinpark2130" target="_blank"><i class="icon-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <% } %>
+    </div>
+</aside>
