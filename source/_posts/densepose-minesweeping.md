@@ -6,9 +6,7 @@ tags:
 date: 2018-11-18 17:00:14
 ---
 <br />
-DensePose is a great work in real-time human pose estimation, which is based on Caffe2 and Detectron framework. 
-It extracts dense human body 3D surface based on RGB images.
-The installation instructions are provided [here](https://github.com/facebookresearch/DensePose/blob/master/INSTALL.md).
+DensePose is a great work in real-time human pose estimation, which is based on Caffe2 and Detectron framework. It extracts dense human body 3D surface based on RGB images. The installation instructions are provided [here](https://github.com/facebookresearch/DensePose/blob/master/INSTALL.md).
 
 During my installation process, these are the problems that took me some time to tackle. I spent on week to finally figure out solutions to all the issues. So lucky of me not to give up too early...
 
@@ -60,9 +58,7 @@ Detectron ops lib not found; make sure that your Caffe2 version includes Detectr
 #### Cause
 Seems that the Python part of DensePose couldn't recognize Caffe2.
 #### Solution
-Add `/path/to/pytorch` to `PYTHONPATH` environment variable. 
-Could be added by directly `export PYTHONPATH=$PYTHONPATH:/path/to/pytorch` instruction or by adding this line to `~/.bashrc`.
-Remember to run `source ~/.bashrc` after the modification.
+Add `/path/to/pytorch` to `PYTHONPATH` environment variable. Could be added by directly `export PYTHONPATH=$PYTHONPATH:/path/to/pytorch` instruction or by adding this line to `~/.bashrc`. Remember to run `source ~/.bashrc` after the modification.
 
 ### 2.3 *.cmake files not found & Unknown CMake command "caffe2_interface_library"
 #### Details
@@ -157,8 +153,7 @@ OSError: /path/to/densepose/build/libcaffe2_detectron_custom_ops_gpu.so: undefin
 #### Cause
 WTF is this!???
 As can be seen, this symbol has something to do with Google, and protobuf.
-I guess this is caused by a different protobuf version.
-Good news is that a proper version of protobuf was also built with Caffe2, so why not tell this to DensePose?
+I guess this is caused by a different protobuf version. Good news is that a proper version of protobuf was also built with Caffe2, so why not tell this to DensePose?
 
 #### Solution
 In `/path/to/densepose/CMakeLists.txt`, Add a few lines in the beginning: 
@@ -190,8 +185,4 @@ After fixing this issue, my DensePose passed tests and was running flawlessly. I
 Starting from this post, I decide to keep a record (tag: MineSweeping) of the issues I meet while working with environments and also their solutions. 
 
 
-Doing configurations in order to run others' code may be a difficult task, and is sometimes depressing, 
-since various issues could arise, and the it's impossible for the authors to keep providing solutions for every user in the community.
-What's worse, after fixing some problems with a lot of struggle, one may have to waste the same amount of time on the same issue
-the next time he/she run it again.
-That's why I decide to keep this record: to avoid wasting time twice, while also helping others deal with problems if possible.
+Doing configurations in order to run others' code may be a difficult task, and is sometimes depressing, since various issues could arise, and the it's impossible for the authors to keep providing solutions for every user in the community. What's worse, after fixing some problems with a lot of struggle, one may have to waste the same amount of time on the same issue the next time he/she run it again. That's why I decide to keep this record: to avoid wasting time twice, while also helping others deal with problems if possible.
