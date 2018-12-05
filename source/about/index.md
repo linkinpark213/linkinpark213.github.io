@@ -5,6 +5,7 @@ title: About Me
 ## Info
 | Nickname          | Harper Long                                                     |
 |-------------------|-----------------------------------------------------------------|
+| Nationality       | China                                                           |
 | Date of Birth     | November 25th, 1996                                             |
 | E-mail            | <linkinpark213@outlook.com>                                     |
 | Occupation        | Student                                                         |
