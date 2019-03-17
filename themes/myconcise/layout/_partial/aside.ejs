@@ -20,10 +20,12 @@
             </div>
             <% } %>
             <div class="author-name"><%= theme.author.name %></div>
-            <div class="author-work"><%- theme.author.work %></div>
+            <div class="author-work"><%= theme.author.work %></div>
             <div class="author-location">
-                <i class="icon-location vm"></i>
-                <span class="vm"><%= theme.author.location %></span>
+                <a href="<%= theme.author.location_url %>" class="location-url">
+                        <i class="icon-location vm"></i>
+                        <span class="vm"><%= theme.author.location %></span>
+                </a>
             </div>
             <div class="author-thread-wrap">
                 <div class="author-threads clearfix">

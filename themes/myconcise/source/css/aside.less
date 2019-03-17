@@ -107,6 +107,14 @@
 .author-location {
     color: @color-muted;
     font-size: 14px;
+
+    a {
+        color: @color-primary;
+        .transition(color 0.3s ease);
+        &:hover {
+            color: #D32F2F;
+        }
+    }
 }
 
 .author-thread-wrap {
@@ -123,6 +131,20 @@
 
     &:hover {
         color: @color-primary;
+    }
+
+    .icon-twitter{
+        .transition(color 0.3s ease);
+        &:hover{
+            color: #1DA1F2;
+        }
+    }
+    
+    .icon-mail{
+        .transition(color 0.3s ease);
+        &:hover{
+            color: #E91E63;
+        }
     }
 }
 

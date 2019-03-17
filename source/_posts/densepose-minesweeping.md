@@ -16,6 +16,8 @@ During my installation process, these are the problems that took me some time to
 
 <!-- more -->
 
+By the way, **before you suffer too much**, I strongly recommend following the step-by-step [Caffe2+DensePose installation guide](https://github.com/Johnqczhang/densepose_installation/blob/master/README.md) by [@Johnqczhang](https://github.com/Johnqczhang). If you think you're almost there, help yourself with the solutions below~
+
 ## 1 Environment
 - System: Ubuntu 18.04
 - Linux kernel: 4.15.0-29-generic
@@ -58,7 +60,7 @@ Detectron ops lib not found; make sure that your Caffe2 version includes Detectr
 #### Cause
 Seems that the Python part of DensePose couldn't recognize Caffe2.
 #### Solution
-Add `/path/to/pytorch` to `PYTHONPATH` environment variable. Could be added by directly `export PYTHONPATH=$PYTHONPATH:/path/to/pytorch` instruction or by adding this line to `~/.bashrc`. Remember to run `source ~/.bashrc` after the modification.
+Add `/path/to/pytorch/build` to `PYTHONPATH` environment variable. Could be added by directly `export PYTHONPATH=$PYTHONPATH:/path/to/pytorch/build` instruction or by adding this line to `~/.bashrc`. Remember to run `source ~/.bashrc` after the modification.
 
 ### 2.3 *.cmake files not found & Unknown CMake command "caffe2_interface_library"
 #### Details
@@ -123,14 +125,14 @@ Main error message:
 ```
 
 #### Cause
-If you only have a protobuf higher than v3.5.0, this should not happen. Check if you have multiple protobufs installed from different sources. (In my case, there was a protobuf v3.2.0 installed with `apt-get` earlier)
+If you only have a protobuf higher than v3.6.1, this should not happen. Check if you have multiple protobufs installed from different sources. (In my case, there was a protobuf v3.2.0 installed with `apt-get` earlier)
 
 #### Solution
 I can't provide an exact solution. Please try
 ```
 which protoc
 ```
-and see where protobuf is installed. If this shows the protobuf you installed with Anaconda, remove it completely and try this again. Since DensePose tells you that you have an older version of protobuf, you should be able to locate one. After finding it, remove it or upgrade it to v3.5.0 or higher. I would prefer installing protobuf from source [here](https://github.com/protocolbuffers/protobuf/releases). It's not so painful as installing DensePose.
+and see where protobuf is installed. If this shows the protobuf you installed with Anaconda, remove it completely and try this again. Since DensePose tells you that you have an older version of protobuf, you should be able to locate one. After finding it, remove it or upgrade it to v3.6.1 or higher. I would prefer installing protobuf from source [here](https://github.com/protocolbuffers/protobuf/releases). It's not so painful as installing DensePose.
 
 ### 2.6 "mkl_cblas.h" not found.
 #### Details
@@ -244,12 +246,41 @@ Then run `make ops` again, and `python detectron/tests/test_zero_even_op.py` aga
 
 After fixing this issue, my DensePose passed tests and was running flawlessly. If any more issues remain, don't hesitate to comment here~
 
+### 2.10 Undefined symbol: _ZN6caffe219CPUOperatorRegistryB5cxx11Ev
+#### Details
+Occurred when running `python detectron/tests/test_zero_even_op.py`, with Caffe2 installed with Anaconda.
+
+Main error message:
+```
+OSError: /path/to/densepose/build/libcaffe2_detectron_custom_ops_gpu.so: undefined symbol: _ZN6caffe219CPUOperatorRegistryB5cxx11Ev
+```
+#### Cause
+As can be seen from the messy undefined symbol, this should have something to do with Caffe2 and probably CXX11(oh really???).
+
+Run `ldd -r /path/to/densepose/build/libcaffe2_detectron_custom_ops.so` and the one or several undefined symbols with similar names will be shown, which should have been defined in `libcaffe2.so`. After running `strings -a /path/to/pytorch/torch/lib/libcaffe2.so | grep _ZN6caffe219CPUOperator`, a few similar symbols (two, in my case) would come up, but are different from the one undefined - `"B5cxx11"` is missing.
+
+Why does DensePose want to find a symbol with `"B5cxx11"`? Who added this suffix?
+It should be our GCC who did it when compiling DensePose with C++11 standard!
+
+To find which version of GCC was Caffe2 built by, run `strings -a /path/to/pytorch/torch/lib/libcaffe2.so | grep GCC:`.
+In my case, the output is:
+```
+GCC: (GNU) 4.9.2 20150212 (Red Hat 4.9.2-6)
+```
+Oh? It seems that Caffe2 developers are Red Hat lovers!
+The Caffe2 installed with Anaconda was built by GCC 4.9.2, which had a slightly different standard on naming symbols.
+#### Solution
+The simpliest way out is to turn to GCC 4.9.2 for building DensePose, too.
+Otherwise, maybe also consider compiling Caffe2/PyTorch from source code?
+
+(Many thanks to Johnqczhang@Github: https://github.com/linkinpark213/linkinpark213.github.io/issues/12)
 
 <div align="center">
     <img src="/images/densepose-ms/ican.jpg" width="15%" height="15%" alt="I just can!">
 </div>
 
 ## 0 Motivation
+
 Starting from this post, I decide to keep a record (tag: MineSweeping) of the issues I meet while working with environments and also their solutions. 
 
 

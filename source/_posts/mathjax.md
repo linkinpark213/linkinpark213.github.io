@@ -1,9 +1,9 @@
 ---
-title: 'MathJax - Use Math in Hexo, Just Like Tex! (Including Problem Solutions)'
+title: 'MathJax - Use Math in Hexo, Just Like Tex! (Including Common Issue Solutions)'
 tags: Blogging
 date: 2018-04-24 14:43:41
 ---
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
 
 Sometimes you may want to explain some algorithms or principles with beautiful formulae in your blog. How to do this? Edit them in Microsoft Word, take a screenshot, crop it and put it in the blog post? When you finish your article and find out that you missed a symbol in the pictures - oh man, gotta repeat that again? Stop using those images now! A beautiful math display engine - MathJax allows you to code math like a coder.
 
