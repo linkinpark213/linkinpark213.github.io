@@ -4,8 +4,8 @@ tags:
   - Deep Learning
   - DIY
 langs:
-  - zh-cn
   - en-us
+  - zh-cn
 date: 2018-04-29 22:05:43
 ---
 
