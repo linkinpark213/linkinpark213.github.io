@@ -1,6 +1,11 @@
 ---
 title: A Brief Review of the R-CNN Family - Region-based CNN for Object Detection
-tags: [Deep Learning, Computer Vision, Object Detection]
+tags: 
+  - Deep Learning
+  - Computer Vision
+  - Object Detection
+  - Reviews
+date: 2019-03-17 14:01:01
 ---
 <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
 

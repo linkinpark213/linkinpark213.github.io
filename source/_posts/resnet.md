@@ -1,7 +1,10 @@
 ---
 title: A Review of ResNet - Residual Networks
 date: 2018-04-22 14:55:35
-tags: [Deep Learning, Computer Vision]
+tags: 
+  - Deep Learning
+  - Computer Vision
+  - Reviews
 ---
 
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>

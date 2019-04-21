@@ -1,7 +1,10 @@
 ---
 title: A Review of VGG net - Very Deep Convolutional Neural Networks
 date: 2018-04-21 16:15:55
-tags: [Deep Learning, Computer Vision]
+tags: 
+  - Deep Learning
+  - Computer Vision
+  - Reviews
 ---
 
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>

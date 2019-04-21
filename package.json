@@ -16,6 +16,9 @@
     "hexo-renderer-ejs": "^0.3.0",
     "hexo-renderer-less": "^0.2.0",
     "hexo-renderer-marked": "^0.3.0",
-    "hexo-server": "^0.2.0"
+    "hexo-server": "^0.2.0",
+    "hoek": ">=6.0.4",
+    "sshpk": ">=1.13.2",
+    "uglify-js": ">=2.6.0"
   }
 }
