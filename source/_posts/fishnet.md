@@ -154,7 +154,7 @@ $$\widetilde{x}'^b_s = r(\widetilde{x}^b_s) + \mathcal{M}(\widetilde{x}^b_s)$$
 在body部分的stage 1中，\\(\mathcal{M}(x)\\)的输出值通道数与\\(x\\)相同，此时\\(r(x)\\)即为\\(x\\)。而stage 2和stage 1中，由于\\(\mathcal{M}(x)\\)中通道数会产生变化（在作者代码中，通道数减半，\\(k=2\\)），所以这里的\\(r(x)\\)需要起到缩小通道数（channel-wise reduction）的作用。**还是为了梯度直接反传**，这里甚至没有使用\\((1\times 1)\\)的卷积来变换通道数，而是直接把每\\(k\\)个通道求和（element-wise summation）而压缩成一个通道。\\(\widetilde{x}’^b_s\\)再进行一下上采样就成为body部分下一个stage（即stage \\(s-1\\)）的输入了：
 $$x^b_{s-1}=up(\widetilde{x}'^b_s)$$
 
-<div align="center" class="figure"><img src="/images/fishnet/ur.png" width="30%" alt="Upsampling & Refinement blocks">
+<div align="center" class="figure"><img src="/images/fishnet/ur.png" width="20%" alt="Upsampling & Refinement blocks">
     Fig. 6 上采样&精化模块
 
 </div>
@@ -167,7 +167,7 @@ $$\widetilde{x}^b_s = concat(x^b_s, \mathcal{T}(x^t_s)) \\\\
 \widetilde{x}'^b_s = \widetilde{x}^b_s + \mathcal{M}(\widetilde{x}^b_s) \\\\
 x^b_{s+1}=down(\widetilde{x}'^b_s)$$
 
-<div align="center" class="figure"><img src="/images/fishnet/dr.png" width="30%" alt="Downsampling & Refinement blocks">
+<div align="center" class="figure"><img src="/images/fishnet/dr.png" width="20%" alt="Downsampling & Refinement blocks">
     Fig. 7 下采样&精化模块
 
 </div>
