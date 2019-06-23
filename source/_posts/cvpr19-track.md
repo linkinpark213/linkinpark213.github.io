@@ -6,12 +6,6 @@ tags:
 date: 2019-06-11 17:27:10
 ---
 
-<style type="text/css" rel="stylesheet">
-.markdown-body p {
-    text-indent: 0
-}   
-</style>
-
 Here's my brief summary of all CVPR19 papers in the field of visual tracking. Abbreviations without parentheses are part of the paper title, and those with parentheses are added by me according to the paper.
 
 <!-- more -->
