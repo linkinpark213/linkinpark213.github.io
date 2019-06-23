@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+
+    
+
+    
+
+    <title>Tag: Reviews | Longing for sth New</title>
+    <meta name="author" content="Harper Long">
+    <meta name="version" content="1.0.0">
+    <meta name="keywords" content>
+    <meta name="description" content>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta name="baidu-site-verification" content="F0CXvmUgA9">
+
+    
+    
+    <link rel="icon" href="/images/favicon.png">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <div class="app">
+        <header class="header clearfix">
+    <div id="nav" class="nav">
+    <button id="open-panel" class="open-panel"><i class="icon-library"></i></button>
+
+    <nav class="nav-inner">
+
+        
+        
+        <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+        </li>
+        
+        
+        
+        <li class="nav-item nav-item-tag">
+            <a id="nav-tag" class="nav-link" href="#">Tags</a>
+            <div id="nav-tags" class="nav-tag-wrap">
+                <i class="nav-tag-arrow"></i>
+                
+  <div class="widget-wrap">
+    <h3 class="widget-title">
+        <i class="icon-tag vm"></i>
+        <span class="vm">Tags</span>
+    </h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blogging/">Blogging</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Computer-Vision/">Computer Vision</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DIY/">DIY</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Deep-Learning/">Deep Learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MineSweeping/">MineSweeping</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Object-Detection/">Object Detection</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Other/">Other</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reviews/">Reviews</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Travel-Gallery/">Travel Gallery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Visual-Tracking/">Visual Tracking</a></li></ul>
+    </div>
+  </div>
+
+
+            </div>
+        </li>
+        
+        
+        
+        <li class="nav-item">
+            <a class="nav-link" href="/archives">Archives</a>
+        </li>
+        
+        
+        
+        <li class="nav-item">
+            <a class="nav-link" href="/atom.xml">RSS Feed</a>
+        </li>
+        
+        
+        
+        <li class="nav-item">
+            <a class="nav-link" href="/about">About</a>
+        </li>
+        
+        
+        
+
+    </nav>
+</div>
+
+    <aside id="aside" class="aside">
+    <div id="aside-mask" class="aside-mask"></div>
+    <div id="aside-inner" class="aside-inner">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit"><i class="icon-search-stroke"></i></button><input type="hidden" name="sitesearch" value="http://linkinpark213.com"></form>
+
+        
+        
+
+        
+        <div class="author-meta">
+            
+            <div class="author-avatar">
+                <a href="/">
+                    <img src="/images/avatar.png" title="Avatar By Xizi Wu">
+                </a>
+            </div>
+            
+            <div class="author-name">Harper Long</div>
+            <div class="author-work">A naive student</div>
+            <div class="author-location">
+                <a href="https://goo.gl/maps/V2edB3z5WHF2" class="location-url">
+                        <i class="icon-location vm"></i>
+                        <span class="vm">Ikoma, Nara, Japan</span>
+                </a>
+            </div>
+            <div class="author-thread-wrap">
+                <div class="author-threads clearfix">
+                    <a class="thread-item" href="https://github.com/linkinpark213" target="_blank"><i class="icon-github"></i></a>
+                    <a class="thread-item" href="mailto:linkinpark213@outlook.com" target="_blank"><i class="icon-mail"></i></a>
+                    <a class="thread-item" href="https://twitter.com/linkinpark2130" target="_blank"><i class="icon-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+</header>
+
+        <div id="content" class="content">
+    <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            <a href="/2019/04/21/fishnet/"><i class="icon-document"></i> [论文总结] 理解FishNet</a>
+        </h1>
+        
+        
+    </header>
+    
+    <section class="article-body markdown-body" id="article-body">
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+<p>从VALSE2019回来后，感觉自己俨然变成了欧阳万里老师的脑残粉呀╰( ᐖ╰)！会上欧阳老师介绍的FishNet简直让我眼前一亮，这么好的点子，我怎么就没想到呐！回来好好读了一下文章和代码，简单总结一下。</p>
+<div align="center" class="figure"><br>  <img src="/images/fishnet/fish.jpg" width="15%" alt="我咸甚，此鱼何能及也"><br><br></div>
+        
+        <p class="article-more-link">
+            <a href="/2019/04/21/fishnet/#more">
+                <span class="vm">Read More</span>
+                <i class="icon-arrow-double-right vm"></i>    
+            </a>
+        </p>
+        
+        
+    </section>
+</article>
+
+
+    <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            <a href="/2019/03/17/rcnns/"><i class="icon-document"></i> A Brief Review of the R-CNN Family - Region-based CNN for Object Detection</a>
+        </h1>
+        
+        
+    </header>
+    
+    <section class="article-body markdown-body" id="article-body">
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+<p>The R-CNNs are awesome works on object detection, which demonstrated the effectiveness of using region proposals with deep neural networks, and have become a state-of-the-art baseline for the object detection task. In this blog post I&#39;ll make a brief review of the R-CNN family - from R-CNN to Mask R-CNN, and several related works based on the idea of R-CNNs. Implementation and evaluation details are not mentioned here. For those details, please refer to the original papers provided in the <a href="#8-References">References</a> section.</p>
+        
+        <p class="article-more-link">
+            <a href="/2019/03/17/rcnns/#more">
+                <span class="vm">Read More</span>
+                <i class="icon-arrow-double-right vm"></i>    
+            </a>
+        </p>
+        
+        
+    </section>
+</article>
+
+
+    <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            <a href="/2018/04/22/resnet/"><i class="icon-document"></i> A Review of ResNet - Residual Networks</a>
+        </h1>
+        
+        
+    </header>
+    
+    <section class="article-body markdown-body" id="article-body">
+        
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+
+<h2 id="0-Introduction"><a href="#0-Introduction" class="headerlink" title="0 Introduction"></a>0 Introduction</h2><p>Deep learning researchers have been constructing skyscrapers in recent years. Especially, VGG nets and GoogLeNet have pushed the depths of convolutional networks to the extreme. But questions remain: if time and money aren&#39;t problems, are deeper networks always performing better? Not exactly.</p>
+<p>When residual networks were proposed, researchers around the world was stunned by its depth. &quot;Jesus Christ! Is this a neural network or the Dubai Tower?&quot; But <strong>don&#39;t be afraid!</strong> These networks are deep but the structures are simple. Interestingly, these networks not only defeated all opponents in the classification, detection, localization challenges in ImageNet 2015, but were also the main innovation in the best paper of CVPR2016.</p>
+<div align="center"><br>    <img src="/images/resnet/network_growth.jpg" width="40%" height="40%" alt="Network Growth"><br></div>
+        
+        <p class="article-more-link">
+            <a href="/2018/04/22/resnet/#more">
+                <span class="vm">Read More</span>
+                <i class="icon-arrow-double-right vm"></i>    
+            </a>
+        </p>
+        
+        
+    </section>
+</article>
+
+
+    <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            <a href="/2018/04/21/vgg/"><i class="icon-document"></i> A Review of VGG net - Very Deep Convolutional Neural Networks</a>
+        </h1>
+        
+        
+    </header>
+    
+    <section class="article-body markdown-body" id="article-body">
+        
+        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+
+<h2 id="0-Introduction"><a href="#0-Introduction" class="headerlink" title="0 Introduction"></a>0 Introduction</h2><p>Convolutional neural networks(CNN) have enjoyed great success in computer vision research fields in the past few years. A number of attempts are made based on the original CNN architecture to improve its accuracy and performance. In 2014, Karen Simonyan et al. did an investigation on the effect of depth on CNNs&#39; accuracy in large-scale image recognition (thus also proposing a series of very deep CNNs which are usually called VGG nets). The result confirmed the importance of CNN depth in visual representations.</p>
+<h2 id="1-Background-VGG-net-39-s-ancestors"><a href="#1-Background-VGG-net-39-s-ancestors" class="headerlink" title="1 Background: VGG net&#39;s ancestors"></a>1 Background: VGG net&#39;s ancestors</h2><p>Before introducing VGG net, let&#39;s take a glance at prior convolutional neural networks. </p>
+<h3 id="1-1-LeNet-The-Origin"><a href="#1-1-LeNet-The-Origin" class="headerlink" title="1.1 LeNet: The Origin"></a>1.1 LeNet: The Origin</h3><p>Basic neural network structures(for example, multi-layer perceptron) learn patterns on 1D vectors, which cannot cope with 2D features in images well. In 1986, Lecun et al. proposed a convolution network model called LeNet-5. Its structure is fairly simple: two convolution layers, two subsampling layers and a few fully connected layers. This network was used to solve a number recognition problem. (If you need to learn more about the convolution operation, please refer to Google or <em>Digital Image Processing</em> by Rafael C. Gonzalez)</p>
+        
+        <p class="article-more-link">
+            <a href="/2018/04/21/vgg/#more">
+                <span class="vm">Read More</span>
+                <i class="icon-arrow-double-right vm"></i>    
+            </a>
+        </p>
+        
+        
+    </section>
+</article>
+
+
+
+
+
+</div>
+        <footer class="footer">
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, Theme by <a href="https://github.com/sanonz/hexo-theme-concise" target="_blank">Concise</a>
+</footer>
+
+<script type="text/javascript" src="//s13.cnzz.com/z_stat.php?id=1234567890&amp;web_id=1234567890"></script>
+
+
+    </div>
+
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
+    
+    <script type="text/javascript">
+        $(function() {
+            var nodes = {
+                nav: $('#nav'),
+                aside: $('#aside'),
+                navTags: $('#nav-tags')
+            };
+
+            $('#open-panel, #aside-mask').on('click', function() {
+                nodes.aside.toggleClass('panel-show');
+            });
+            $('#nav-tag').on('click', function(event) {
+                event.preventDefault();console.log(nodes.navTags.attr('class'))
+                nodes.navTags.toggleClass('tag-show');console.log(nodes.navTags.attr('class'))
+            })/*.hover(function() {
+                nodes.navTags.addClass('tag-show');
+            }, function() {
+                nodes.navTags.removeClass('tag-show');
+            });*/
+
+            
+        });
+    </script>
+
+</body>
+</html>

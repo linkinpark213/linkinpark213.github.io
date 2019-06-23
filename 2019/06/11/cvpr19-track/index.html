@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+
+    
+
+    
+
+    <title>A Summary of CVPR19 Visual Tracking Papers | Longing for sth New</title>
+    <meta name="author" content="Harper Long">
+    <meta name="version" content="1.0.0">
+    <meta name="keywords" content>
+    <meta name="description" content="Here&amp;#39;s my brief summary of all CVPR19 papers in the field of visual tracking. Abbreviations without parentheses are part of the paper title, and those with parentheses are added by me according to the paper.
+
+RGB-basedSingle-Object Tracking(UDT):">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta name="baidu-site-verification" content="F0CXvmUgA9">
+
+    
+    
+    <link rel="icon" href="/images/favicon.png">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <div class="app">
+        <header class="header clearfix">
+    <div id="nav" class="nav">
+    <button id="open-panel" class="open-panel"><i class="icon-library"></i></button>
+
+    <nav class="nav-inner">
+
+        
+        
+        <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+        </li>
+        
+        
+        
+        <li class="nav-item nav-item-tag">
+            <a id="nav-tag" class="nav-link" href="#">Tags</a>
+            <div id="nav-tags" class="nav-tag-wrap">
+                <i class="nav-tag-arrow"></i>
+                
+  <div class="widget-wrap">
+    <h3 class="widget-title">
+        <i class="icon-tag vm"></i>
+        <span class="vm">Tags</span>
+    </h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blogging/">Blogging</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Computer-Vision/">Computer Vision</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DIY/">DIY</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Deep-Learning/">Deep Learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MineSweeping/">MineSweeping</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Object-Detection/">Object Detection</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Other/">Other</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reviews/">Reviews</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Travel-Gallery/">Travel Gallery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Visual-Tracking/">Visual Tracking</a></li></ul>
+    </div>
+  </div>
+
+
+            </div>
+        </li>
+        
+        
+        
+        <li class="nav-item">
+            <a class="nav-link" href="/archives">Archives</a>
+        </li>
+        
+        
+        
+        <li class="nav-item">
+            <a class="nav-link" href="/atom.xml">RSS Feed</a>
+        </li>
+        
+        
+        
+        <li class="nav-item">
+            <a class="nav-link" href="/about">About</a>
+        </li>
+        
+        
+        
+
+    </nav>
+</div>
+
+    <aside id="aside" class="aside">
+    <div id="aside-mask" class="aside-mask"></div>
+    <div id="aside-inner" class="aside-inner">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit"><i class="icon-search-stroke"></i></button><input type="hidden" name="sitesearch" value="http://linkinpark213.com"></form>
+
+        
+        
+        
+        
+
+        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#RGB-based"><span class="toc-number">1.</span> <span class="toc-text">RGB-based</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Single-Object-Tracking"><span class="toc-number">1.1.</span> <span class="toc-text">Single-Object Tracking</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Multi-Object-Tracking"><span class="toc-number">1.2.</span> <span class="toc-text">Multi-Object Tracking</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Pose-Tracking"><span class="toc-number">1.3.</span> <span class="toc-text">Pose Tracking</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#RGBD-based"><span class="toc-number">2.</span> <span class="toc-text">RGBD-based</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Pointcloud-based"><span class="toc-number">3.</span> <span class="toc-text">Pointcloud-based</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Datasets"><span class="toc-number">4.</span> <span class="toc-text">Datasets</span></a></li></ol>
+        
+    </div>
+</aside>
+
+</header>
+
+        <div id="content" class="content"><article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            A Summary of CVPR19 Visual Tracking Papers
+        </h1>
+        
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="/2019/06/11/cvpr19-track/">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2019-06-11T08:27:10.000Z" itemprop="datePublished">2019-06-11</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/Deep-Learning/">Deep Learning</a>, <a class="article-tag-link" href="/tags/Visual-Tracking/">Visual Tracking</a>
+</div>
+
+
+        </div>
+        
+    </header>
+    
+    <section class="article-body markdown-body" id="article-body">
+        
+        
+        <p>Here&#39;s my brief summary of all CVPR19 papers in the field of visual tracking. Abbreviations without parentheses are part of the paper title, and those with parentheses are added by me according to the paper.</p>
+<a id="more"></a>
+<h1 id="RGB-based"><a href="#RGB-based" class="headerlink" title="RGB-based"></a>RGB-based</h1><h2 id="Single-Object-Tracking"><a href="#Single-Object-Tracking" class="headerlink" title="Single-Object Tracking"></a>Single-Object Tracking</h2><p><strong>(UDT): Unsupervised Deep Tracking</strong><br><strong>Authors</strong>: Ning Wang, Yibing Song, Chao Ma, Wengang Zhou, Wei Liu, Houqiang Li<br><strong>arXiv Link</strong>: <a href="https://arxiv.org/abs/1904.01828" target="_blank" rel="noopener">https://arxiv.org/abs/1904.01828</a><br><strong>Project Link</strong>: <a href="https://github.com/594422814/UDT" target="_blank" rel="noopener">https://github.com/594422814/UDT</a><br><strong>Summary</strong>: Train a robust siamese network on large-scale unlabeled videos in an unsupervised manner - forward-and-backward, i.e., the tracker can forward localize the target object in successive frames and backtrace to its initial position in the first frame.<br><strong>Highlights</strong>: Unsupervised learning</p>
+<p><strong>(TADT): Target-Aware Deep Tracking</strong><br><strong>Authors</strong>: Xin Li, Chao Ma, Baoyuan Wu, Zhenyu He, Ming-Hsuan Yang<br><strong>arXiv Link</strong>: <a href="https://arxiv.org/abs/1904.01772" target="_blank" rel="noopener">https://arxiv.org/abs/1904.01772</a><br><strong>Project Link</strong>: <a href="https://xinli-zn.github.io/TADT-project-page/" target="_blank" rel="noopener">https://xinli-zn.github.io/TADT-project-page/</a><br><strong>Summary</strong>: Targets of interest can be arbitrary object class with arbitrary forms, while pre-trained deep features are less effective in modeling these targets of arbitrary forms for distinguishing them from the background. TADT learns target-aware features, thus can better recognize the targets undergoing significant appearance variations than pre-trained deep features.<br><strong>Highlights</strong>: Target-aware features, better discrimination</p>
+<p><strong>(SiamMask): Fast Online Object Tracking and Segmentation: A Unifying Approach</strong><br><strong>Authors</strong>: Qiang Wang, Li Zhang, Luca Bertinetto, Weiming Hu, Philip H.S. Torr<br><strong>arXiv Link</strong>: <a href="https://arxiv.org/abs/1812.05050" target="_blank" rel="noopener">https://arxiv.org/abs/1812.05050</a><br><strong>Project Link</strong>: <a href="https://github.com/foolwood/SiamMask" target="_blank" rel="noopener">https://github.com/foolwood/SiamMask</a><br>Zhihu Link: <a href="https://zhuanlan.zhihu.com/p/58154634" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/58154634</a><br><strong>Summary</strong>: Perform both visual object tracking and semi-supervised video object segmentation, in real-time, with a single simple approach.<br><strong>Highlights</strong>: Mask prediction in tracking</p>
+<p><strong>SiamRPN++: Evolution of Siamese Visual Tracking With Very Deep Networks</strong><br><strong>Authors</strong>: Bo Li, Wei Wu, Qiang Wang, Fangyi Zhang, Junliang Xing, Junjie Yan<br><strong>arXiv Link</strong>: <a href="https://arxiv.org/abs/1812.11703" target="_blank" rel="noopener">https://arxiv.org/abs/1812.11703</a><br><strong>Project Link</strong>: <a href="http://bo-li.info/SiamRPN++/" target="_blank" rel="noopener">http://bo-li.info/SiamRPN++/</a><br><strong>Summary</strong>: SiamRPN++ breaks the translation invariance restriction through a simple yet effective spatial-aware sampling strategy. SiamRPN++ performs depth-wise and layer-wise aggregations, improving the accuracy but also reduces the model size. Current state-of-the-art in OTB2015, VOT2018, UAV123, LaSOT, and TrackingNet.<br><strong>Highlights</strong>: Deep backbones, state-of-the-art</p>
+<p><strong>(CIR/SiamDW): Deeper and Wider Siamese Networks for Real-Time Visual Tracking</strong><br><strong>Authors</strong>: Zhipeng Zhang, Houwen Peng<br><strong>arXiv Link</strong>: <a href="https://arxiv.org/abs/1901.01660" target="_blank" rel="noopener">https://arxiv.org/abs/1901.01660</a><br><strong>Project Link</strong>: <a href="https://github.com/researchmm/SiamDW" target="_blank" rel="noopener">https://github.com/researchmm/SiamDW</a><br><strong>Summary</strong>: SiamDW explores utilizing deeper and wider network backbones in another aspect - careful designs of residual units, considering receptive field, stride, output feature size - to eliminate the negative impact of padding in deep network backbones.<br><strong>Highlights</strong>: Cropping-Inside-Residual, eliminating the negative impact of padding</p>
+<p><strong>(SiamC-RPN): Siamese Cascaded Region Proposal Networks for Real-Time Visual Tracking</strong><br><strong>Authors</strong>: Heng Fan, Haibin Ling<br><strong>arXiv Link</strong>: <a href="https://arxiv.org/abs/1812.06148" target="_blank" rel="noopener">https://arxiv.org/abs/1812.06148</a><br><strong>Project Link</strong>: None<br><strong>Summary</strong>: Previously proposed one-stage Siamese-RPN trackers degenerate in presence of similar distractors and large scale variation. Advantages: 1) Each RPN in Siamese C-RPN is trained using outputs of the previous RPN, thus simulating hard negative sampling. 2) Feature transfer blocks (FTB) further improving the discriminability. 3) The location and shape of the target in each RPN is progressively refined, resulting in better localization.<br><strong>Highlights</strong>: Cascaded RPN, excellent accuracy</p>
+<p><strong>SPM-Tracker: Series-Parallel Matching for Real-Time Visual Object Tracking</strong><br><strong>Authors</strong>: Guangting Wang, Chong Luo, Zhiwei Xiong, Wenjun Zeng<br><strong>arXiv Link</strong>: <a href="https://arxiv.org/abs/1904.04452" target="_blank" rel="noopener">https://arxiv.org/abs/1904.04452</a><br><strong>Project Link</strong>: None<br><strong>Summary</strong>: To overcome the simultaneous requirements on robustness and discrimination power, SPM-Tracker tackle the challenge by connecting a coarse matching stage and a fine matching stage, taking advantage of both stages, resulting in superior performance, and exceeding other real-time trackers by a notable margin.<br><strong>Highlights</strong>: Coarse matching &amp; fine matching</p>
+<p><strong>ATOM: Accurate Tracking by Overlap Maximization</strong><br><strong>Authors</strong>: Martin Danelljan, Goutam Bhat, Fahad Shahbaz Khan, Michael Felsberg<br><strong>arXiv Link</strong>: <a href="https://arxiv.org/abs/1811.07628" target="_blank" rel="noopener">https://arxiv.org/abs/1811.07628</a><br><strong>Project Link</strong>: <a href="https://github.com/visionml/pytracking" target="_blank" rel="noopener">https://github.com/visionml/pytracking</a><br><strong>Summary</strong>: Target estimation is a complex task, requiring highlevel knowledge about the object, while most trackers only resort to a simple multi-scale search. In comparison, ATOM estimate target states by predicting the overlap between the target object and an estimated bounding box. Besides, a classification component that is trained online to guarantee high discriminative power in the presence of distractors.<br><strong>Highlights</strong>: Overlap IoU prediction</p>
+<p><strong>(GCT): Graph Convolutional Tracking</strong><br><strong>Authors</strong>: Junyu Gao, Tianzhu Zhang, Changsheng Xu<br><strong>arXiv Link</strong>: None<br><strong>PDF Link</strong>: <a href="http://openaccess.thecvf.com/content_CVPR_2019/papers/Gao_Graph_Convolutional_Tracking_CVPR_2019_paper.pdf" target="_blank" rel="noopener">http://openaccess.thecvf.com/content_CVPR_2019/papers/Gao_Graph_Convolutional_Tracking_CVPR_2019_paper.pdf</a><br><strong>Project Link</strong>: <a href="http://nlpr-web.ia.ac.cn/mmc/homepage/jygao/gct_cvpr2019.html" target="_blank" rel="noopener">http://nlpr-web.ia.ac.cn/mmc/homepage/jygao/gct_cvpr2019.html</a><br><strong>Summary</strong>: Spatial-temporal information can provide diverse features to enhance the target representation. GCT incorporates 1) a spatial-temporal GCN to model the structured representation of historical target exemplars, and 2) a context GCN to utilize the context of the current frame to learn adaptive features for target localization.<br><strong>Highlights</strong>: Graph convolution networks, spatial-temporal information</p>
+<p><strong>(ASRCF): Visual Tracking via Adaptive Spatially-Regularized Correlation Filters</strong><br><strong>Authors</strong>: Kenan Dai, Dong Wang, Huchuan Lu, Chong Sun, Jianhua Li<br><strong>arXiv Link</strong>: None<br><strong>Project Link</strong>: <a href="https://github.com/Daikenan/ASRCF" target="_blank" rel="noopener">https://github.com/Daikenan/ASRCF</a> (To be updated)<br><strong>Summary</strong>: ASRCF simultaneously optimize the filter coefficients and the spatial regularization weight. ASRCF applies two correlation filters (CFs) to estimate the location and scale respectively - 1) location CF model, which exploits ensembles of shallow and deep features to determine the optimal position accurately, and 2) scale CF model, which works on multi-scale shallow features to estimate the optimal scale efficiently.<br><strong>Highlights</strong>: Estimate location and scale respectively</p>
+<p><strong>(RPCF): RoI Pooled Correlation Filters for Visual Tracking</strong><br><strong>Authors</strong>: Yuxuan Sun, Chong Sun, Dong Wang, You He, Huchuan Lu<br><strong>arXiv Link</strong>: None<br><strong>Project Link</strong>: None<br>PDF Link: <a href="http://openaccess.thecvf.com/content_CVPR_2019/papers/Sun_ROI_Pooled_Correlation_Filters_for_Visual_Tracking_CVPR_2019_paper.pdf" target="_blank" rel="noopener">http://openaccess.thecvf.com/content_CVPR_2019/papers/Sun_ROI_Pooled_Correlation_Filters_for_Visual_Tracking_CVPR_2019_paper.pdf</a><br><strong>Summary</strong>: RoI-based pooling can be equivalently achieved by enforcing additional constraints on the learned filter weights and thus becomes feasible on the virtual circular samples. Considering RoI pooling in the correlation filter formula, the RPCF performs favourably against other state-of-the-art trackers.<br><strong>Highlights</strong>: RoI pooling in correlation filters</p>
+<h2 id="Multi-Object-Tracking"><a href="#Multi-Object-Tracking" class="headerlink" title="Multi-Object Tracking"></a>Multi-Object Tracking</h2><p><strong>(TBA): Tracking by Animation: Unsupervised Learning of Multi-Object Attentive Trackers</strong><br><strong>Authors</strong>: Zhen He, Jian Li, Daxue Liu, Hangen He, David Barber<br><strong>arXiv Link</strong>: <a href="https://arxiv.org/abs/1809.03137" target="_blank" rel="noopener">https://arxiv.org/abs/1809.03137</a><br><strong>Project Link</strong>: <a href="https://github.com/zhen-he/tracking-by-animation" target="_blank" rel="noopener">https://github.com/zhen-he/tracking-by-animation</a><br><strong>Summary</strong>: The common Tracking-by-Detection (TBD) paradigm use supervised learning and treat detection and tracking separately. Instead, TBA is a differentiable neural model that first tracks objects from input frames, animates these objects into reconstructed frames, and learns by the reconstruction error through backpropagation. Besides, a Reprioritized Attentive Tracking is proposed to improve the robustness of data association.<br><strong>Highlights</strong>: Label-free, end-to-end MOT learning</p>
+<p><strong>Eliminating Exposure Bias and Metric Mismatch in Multiple Object Tracking</strong><br><strong>Authors</strong>: Andrii Maksai, Pascal Fua<br><strong>arXiv Link</strong>: <a href="https://arxiv.org/abs/1811.10984" target="_blank" rel="noopener">https://arxiv.org/abs/1811.10984</a><br><strong>Project Link</strong>: None<br><strong>Summary</strong>: Many state-of-the-art MOT approaches now use sequence models to solve identity switches but their training can be affected by biases. An iterative scheme of building a rich training set is proposed and used to learn a scoring function that is an explicit proxy for the target tracking metric.<br><strong>Highlights</strong>: Eliminating loss-evaluation mismatch</p>
+<h2 id="Pose-Tracking"><a href="#Pose-Tracking" class="headerlink" title="Pose Tracking"></a>Pose Tracking</h2><p><strong>Multi-Person Articulated Tracking With Spatial and Temporal Embeddings</strong><br><strong>Authors</strong>: Sheng Jin, Wentao Liu, Wanli Ouyang, Chen Qian<br><strong>arXiv Link</strong>: <a href="https://arxiv.org/abs/1903.09214" target="_blank" rel="noopener">https://arxiv.org/abs/1903.09214</a><br><strong>Project Link</strong>: None<br><strong>Summary</strong>: The framework consists of a SpatialNet and a TemporalNet, predicting (body part detection heatmaps + Keypoint Embedding (KE) + Spatial Instance Embedding (SIE)) and (Human Embedding (HE) + Temporal Instance Embedding (TIE)). Besides, a differentiable Pose-Guided Grouping (PGG) module to make the whole part detection and grouping pipeline fully end-to-end trainable.<br><strong>Highlights</strong>: Spatial &amp; temporal embeddings, end-to-end learning &quot;detection and grouping&quot; pipeline</p>
+<p><strong>(STAF): Efficient Online Multi-Person 2D Pose Tracking With Recurrent Spatio-Temporal Affinity Fields</strong><br><strong>Authors</strong>: Yaadhav Raaj, Haroon Idrees, Gines Hidalgo, Yaser Sheikh<br><strong>arXiv Link</strong>: <a href="https://arxiv.org/abs/1811.11975" target="_blank" rel="noopener">https://arxiv.org/abs/1811.11975</a><br><strong>Project Link</strong>: None<br><strong>Summary</strong>: Upon Part Affinity Field (PAF) representation designed for static images, an architecture encoding ans predicting Spatio-Temporal Affinity Fields (STAF) across a video sequence is proposed - a novel temporal topology cross-linked across limbs which can consistently handle body motions of a wide range of magnitudes. The network ingests STAF heatmaps from previous frames and estimates those for the current frame.<br><strong>Highlights</strong>: Online, fastest and the most accurate bottom-up approach</p>
+<h1 id="RGBD-based"><a href="#RGBD-based" class="headerlink" title="RGBD-based"></a>RGBD-based</h1><p><strong>(OTR)</strong>: Object Tracking by Reconstruction With View-Specific Discriminative Correlation Filters<br><strong>Authors</strong>: Ugur Kart, Alan Lukezic, Matej Kristan, Joni-Kristian Kamarainen, Jiri Matas<br><strong>arXiv Link</strong>: <a href="https://arxiv.org/abs/1811.10863" target="_blank" rel="noopener">https://arxiv.org/abs/1811.10863</a><br><strong>Summary</strong>: Perform online 3D target reconstruction to facilitate robust learning of a set of view-specific discriminative correlation filters (DCFs). State-of-the-art on Princeton RGB-D tracking and STC Benchmarks.</p>
+<h1 id="Pointcloud-based"><a href="#Pointcloud-based" class="headerlink" title="Pointcloud-based"></a>Pointcloud-based</h1><p>I&#39;m not experienced in point clouds so I couldn&#39;t make a summary for the following papers. The abstracts are given below. Check them out at arXiv to learn more if you&#39;re interested.</p>
+<p><strong>VITAMIN-E</strong>: VIsual Tracking and MappINg With Extremely Dense Feature Points<br><strong>Authors</strong>: Masashi Yokozuka, Shuji Oishi, Simon Thompson, Atsuhiko Banno<br><strong>arXiv Link</strong>: <a href="https://arxiv.org/abs/1904.10324" target="_blank" rel="noopener">https://arxiv.org/abs/1904.10324</a><br><strong>Project Link</strong>: None<br><strong>Abstract</strong>: In this paper, we propose a novel indirect monocular SLAM algorithm called &quot;VITAMIN-E,&quot; which is highly accurate and robust as a result of tracking extremely dense feature points. Typical indirect methods have difficulty in reconstructing dense geometry because of their careful feature point selection for accurate matching. Unlike conventional methods, the proposed method processes an enormous number of feature points by tracking the local extrema of curvature informed by dominant flow estimation. Because this may lead to high computational cost during bundle adjustment, we propose a novel optimization technique, the &quot;subspace Gauss--Newton method&quot;, that significantly improves the computational efficiency of bundle adjustment by partially updating the variables. We concurrently generate meshes from the reconstructed points and merge them for an entire 3D model. The experimental results on the SLAM benchmark dataset EuRoC demonstrated that the proposed method outperformed state-of-the-art SLAM methods, such as DSO, ORB-SLAM, and LSD-SLAM, both in terms of accuracy and robustness in trajectory estimation. The proposed method simultaneously generated significantly detailed 3D geometry from the dense feature points in real time using only a CPU.</p>
+<p><strong>Leveraging Shape Completion for 3D Siamese Tracking</strong><br><strong>Authors</strong>: Silvio Giancola<em>, Jesus Zarzar</em>, and Bernard Ghanem<br><strong>arXiv Link</strong>: <a href="https://arxiv.org/abs/1903.01784" target="_blank" rel="noopener">https://arxiv.org/abs/1903.01784</a><br><strong>Project Link</strong>: <a href="https://github.com/SilvioGiancola/ShapeCompletion3DTracking" target="_blank" rel="noopener">https://github.com/SilvioGiancola/ShapeCompletion3DTracking</a><br><strong>Abstract</strong>: Point clouds are challenging to process due to their sparsity, therefore autonomous vehicles rely more on appearance attributes than pure geometric features. However, 3D LIDAR perception can provide crucial information for urban navigation in challenging light or weather conditions. In this paper, we investigate the versatility of Shape Completion for 3D Object Tracking in LIDAR point clouds. We design a Siamese tracker that encodes model and candidate shapes into a compact latent representation. We regularize the encoding by enforcing the latent representation to decode into an object model shape. We observe that 3D object tracking and 3D shape completion complement each other. Learning a more meaningful latent representation shows better discriminatory capabilities, leading to improved tracking performance. We test our method on the KITTI Tracking set using car 3D bounding boxes. Our model reaches a 76.94% Success rate and 81.38% Precision for 3D Object Tracking, with the shape completion regularization leading to an improvement of 3% in both metrics.</p>
+<h1 id="Datasets"><a href="#Datasets" class="headerlink" title="Datasets"></a>Datasets</h1><p><strong>LaSOT</strong>: A High-Quality Benchmark for Large-Scale Single Object Tracking<br><strong>Authors</strong>: Heng Fan, Liting Lin, Fan Yang, Peng Chu, Ge Deng, Sijia Yu, Hexin Bai, Yong Xu, Chunyuan Liao, Haibin Ling<br><strong>arXiv Link</strong>: <a href="https://arxiv.org/abs/1809.07845" target="_blank" rel="noopener">https://arxiv.org/abs/1809.07845</a><br><strong>Project Link</strong>: <a href="https://cis.temple.edu/lasot/" target="_blank" rel="noopener">https://cis.temple.edu/lasot/</a><br><strong>Summary</strong>: A high-quality benchmark for <strong>La</strong>rge-scale <strong>S</strong>ingle <strong>O</strong>bject <strong>T</strong>racking, consisting of 1,400 sequences with more than 3.5M frames.</p>
+<p><strong>CityFlow</strong>: A City-Scale Benchmark for Multi-Target Multi-Camera Vehicle Tracking and Re-Identification<br>Zheng Tang, Milind Naphade, Ming-Yu Liu, Xiaodong Yang, Stan Birchfield, Shuo Wang, Ratnesh Kumar, David Anastasiu, Jenq-Neng Hwang<br><strong>arXiv Link</strong>: <a href="https://arxiv.org/abs/1903.09254" target="_blank" rel="noopener">https://arxiv.org/abs/1903.09254</a><br><strong>Project Link</strong>: <a href="https://www.aicitychallenge.org/" target="_blank" rel="noopener">https://www.aicitychallenge.org/</a><br><strong>Summary</strong>: The largest-scale dataset in terms of spatial coverage and the number of cameras/videos in an urban environment,  consisting of more than 3 hours of synchronized HD videos from 40 cameras across 10 intersections, with the longest distance between two simultaneous cameras being 2.5 km.</p>
+<p><strong>MOTS</strong>: Multi-Object Tracking and Segmentation<br><strong>Authors</strong>: Paul Voigtlaender, Michael Krause, Aljosa Osep, Jonathon Luiten, Berin Balachandar Gnana Sekar, Andreas Geiger, Bastian Leibe<br><strong>arXiv Link</strong>: <a href="https://arxiv.org/abs/1902.03604" target="_blank" rel="noopener">https://arxiv.org/abs/1902.03604</a><br><strong>Project Link</strong>: <a href="https://www.vision.rwth-aachen.de/page/mots" target="_blank" rel="noopener">https://www.vision.rwth-aachen.de/page/mots</a><br><strong>Summary</strong>: Going beyond 2D bounding boxes and extending the popular task of multi-object tracking to multi-object tracking and segmentation, in tasks and metrics.<br><strong>Highlights</strong>: Extend MOT with segmentation</p>
+<p><strong>Argoverse</strong>: 3D Tracking and Forecasting With Rich Maps<br>Ming-Fang Chang, John Lambert, Patsorn Sangkloy, Jagjeet Singh, Slawomir Bak, Andrew Hartnett, De Wang, Peter Carr, Simon Lucey, Deva Ramanan, James Hays<br><strong>arXiv Link</strong>: None<br><strong>PDF Link</strong>: <a href="http://openaccess.thecvf.com/content_CVPR_2019/papers/Chang_Argoverse_3D_Tracking_and_Forecasting_With_Rich_Maps_CVPR_2019_paper.pdf" target="_blank" rel="noopener">http://openaccess.thecvf.com/content_CVPR_2019/papers/Chang_Argoverse_3D_Tracking_and_Forecasting_With_Rich_Maps_CVPR_2019_paper.pdf</a><br><strong>Project Link</strong>: Argoverse.org (Not working?)<br><strong>Summary</strong>: A dataset designed to support autonomous vehicle perception tasks including 3D tracking and motion forecasting.</p>
+
+        
+        
+    </section>
+</article>
+
+
+
+<!-- Gitalk start  -->
+
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script> 
+<div id="gitalk-container"></div>     
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+
+		clientID: `c4adccc75586706f480a`,
+		clientSecret: `cd36866f06c4b1cf832570bb669cdb75ab121ddd`,
+		repo: `linkinpark213.github.io`,
+		owner: 'linkinpark213',
+		admin: ['linkinpark213'],
+		id: window.location.pathname,
+    
+    });
+    gitalk.render('gitalk-container');
+</script> 
+
+<!-- Gitalk end -->
+
+</div>
+        <footer class="footer">
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, Theme by <a href="https://github.com/sanonz/hexo-theme-concise" target="_blank">Concise</a>
+</footer>
+
+<script type="text/javascript" src="//s13.cnzz.com/z_stat.php?id=1234567890&amp;web_id=1234567890"></script>
+
+
+    </div>
+
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
+    
+    <script type="text/javascript" src="/js/scrollspy.min.js"></script>
+    
+    <script type="text/javascript">
+        $(function() {
+            var nodes = {
+                nav: $('#nav'),
+                aside: $('#aside'),
+                navTags: $('#nav-tags')
+            };
+
+            $('#open-panel, #aside-mask').on('click', function() {
+                nodes.aside.toggleClass('panel-show');
+            });
+            $('#nav-tag').on('click', function(event) {
+                event.preventDefault();console.log(nodes.navTags.attr('class'))
+                nodes.navTags.toggleClass('tag-show');console.log(nodes.navTags.attr('class'))
+            })/*.hover(function() {
+                nodes.navTags.addClass('tag-show');
+            }, function() {
+                nodes.navTags.removeClass('tag-show');
+            });*/
+
+            
+            $(document.body).scrollspy({target: '#aside-inner'});
+            
+        });
+    </script>
+
+</body>
+</html>

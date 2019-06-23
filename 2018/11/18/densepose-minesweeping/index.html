@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+
+    
+
+    
+
+    <title>[MineSweeping] The Long Struggle of DensePose Installation | Longing for sth New</title>
+    <meta name="author" content="Harper Long">
+    <meta name="version" content="1.0.0">
+    <meta name="keywords" content>
+    <meta name="description" content="DensePose is a great work in real-time human pose estimation, which is based on Caffe2 and Detectron framework. It extracts dense human body 3D surface based on RGB images. The installation instructions are provided here.
+During my installation proce">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta name="baidu-site-verification" content="F0CXvmUgA9">
+
+    
+    
+    <link rel="icon" href="/images/favicon.png">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <div class="app">
+        <header class="header clearfix">
+    <div id="nav" class="nav">
+    <button id="open-panel" class="open-panel"><i class="icon-library"></i></button>
+
+    <nav class="nav-inner">
+
+        
+        
+        <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+        </li>
+        
+        
+        
+        <li class="nav-item nav-item-tag">
+            <a id="nav-tag" class="nav-link" href="#">Tags</a>
+            <div id="nav-tags" class="nav-tag-wrap">
+                <i class="nav-tag-arrow"></i>
+                
+  <div class="widget-wrap">
+    <h3 class="widget-title">
+        <i class="icon-tag vm"></i>
+        <span class="vm">Tags</span>
+    </h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blogging/">Blogging</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Computer-Vision/">Computer Vision</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DIY/">DIY</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Deep-Learning/">Deep Learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MineSweeping/">MineSweeping</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Object-Detection/">Object Detection</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Other/">Other</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reviews/">Reviews</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Travel-Gallery/">Travel Gallery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Visual-Tracking/">Visual Tracking</a></li></ul>
+    </div>
+  </div>
+
+
+            </div>
+        </li>
+        
+        
+        
+        <li class="nav-item">
+            <a class="nav-link" href="/archives">Archives</a>
+        </li>
+        
+        
+        
+        <li class="nav-item">
+            <a class="nav-link" href="/atom.xml">RSS Feed</a>
+        </li>
+        
+        
+        
+        <li class="nav-item">
+            <a class="nav-link" href="/about">About</a>
+        </li>
+        
+        
+        
+
+    </nav>
+</div>
+
+    <aside id="aside" class="aside">
+    <div id="aside-mask" class="aside-mask"></div>
+    <div id="aside-inner" class="aside-inner">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit"><i class="icon-search-stroke"></i></button><input type="hidden" name="sitesearch" value="http://linkinpark213.com"></form>
+
+        
+        
+        
+        
+
+        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Environment"><span class="toc-number">1.</span> <span class="toc-text">1 Environment</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Problems-amp-Solutions"><span class="toc-number">2.</span> <span class="toc-text">2 Problems &amp; Solutions</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-Caffe2-module-not-found"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 Caffe2 module not found</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Details"><span class="toc-number">2.1.1.</span> <span class="toc-text">Details</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Cause"><span class="toc-number">2.1.2.</span> <span class="toc-text">Cause</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Solution"><span class="toc-number">2.1.3.</span> <span class="toc-text">Solution</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-Detectron-ops-lib-not-found"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 Detectron ops lib not found</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Details-1"><span class="toc-number">2.2.1.</span> <span class="toc-text">Details</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Cause-1"><span class="toc-number">2.2.2.</span> <span class="toc-text">Cause</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Solution-1"><span class="toc-number">2.2.3.</span> <span class="toc-text">Solution</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-cmake-files-not-found-amp-Unknown-CMake-command-quot-caffe2-interface-library-quot"><span class="toc-number">2.3.</span> <span class="toc-text">2.3 *.cmake files not found &amp; Unknown CMake command &quot;caffe2_interface_library&quot;</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Details-2"><span class="toc-number">2.3.1.</span> <span class="toc-text">Details</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Cause-2"><span class="toc-number">2.3.2.</span> <span class="toc-text">Cause</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Solution-2"><span class="toc-number">2.3.3.</span> <span class="toc-text">Solution</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-quot-context-gpu-h-quot-not-found"><span class="toc-number">2.4.</span> <span class="toc-text">2.4 &quot;context_gpu.h&quot; not found.</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Details-3"><span class="toc-number">2.4.1.</span> <span class="toc-text">Details</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Cause-3"><span class="toc-number">2.4.2.</span> <span class="toc-text">Cause</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Solution-3"><span class="toc-number">2.4.3.</span> <span class="toc-text">Solution</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-This-file-was-generated-by-a-newer-version-of-protoc-which-is-incompatible-with-your-Protocol-Buffer-headers-Please-update-your-headers"><span class="toc-number">2.5.</span> <span class="toc-text">2.5 This file was generated by a newer version of protoc which is incompatible with your Protocol Buffer headers. Please update your headers.</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Details-4"><span class="toc-number">2.5.1.</span> <span class="toc-text">Details</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Cause-4"><span class="toc-number">2.5.2.</span> <span class="toc-text">Cause</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Solution-4"><span class="toc-number">2.5.3.</span> <span class="toc-text">Solution</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-quot-mkl-cblas-h-quot-not-found"><span class="toc-number">2.6.</span> <span class="toc-text">2.6 &quot;mkl_cblas.h&quot; not found.</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Details-5"><span class="toc-number">2.6.1.</span> <span class="toc-text">Details</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Cause-5"><span class="toc-number">2.6.2.</span> <span class="toc-text">Cause</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Solution-5"><span class="toc-number">2.6.3.</span> <span class="toc-text">Solution</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-7-GetSingleArgument’-is-not-a-member-of-‘caffe2-PoolPointsInterpOp’"><span class="toc-number">2.7.</span> <span class="toc-text">2.7 GetSingleArgument’ is not a member of ‘caffe2::PoolPointsInterpOp’</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Details-6"><span class="toc-number">2.7.1.</span> <span class="toc-text">Details</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Cause-6"><span class="toc-number">2.7.2.</span> <span class="toc-text">Cause</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Solution-6"><span class="toc-number">2.7.3.</span> <span class="toc-text">Solution</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-8-fatal-error-caffe2-utils-threadpool-ThreadPool-h-No-such-file-or-directory"><span class="toc-number">2.8.</span> <span class="toc-text">2.8 fatal error: caffe2/utils/threadpool/ThreadPool.h: No such file or directory</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Details-7"><span class="toc-number">2.8.1.</span> <span class="toc-text">Details</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cause-7"><span class="toc-number">2.9.</span> <span class="toc-text">Cause</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Solution-7"><span class="toc-number">2.10.</span> <span class="toc-text">Solution</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-9-Undefined-symbol-ZN6google8protobuf8internal9ArenaImpl28AllocateAlignedAndAddCleanupEmPFvPvE"><span class="toc-number">2.11.</span> <span class="toc-text">2.9 Undefined symbol: _ZN6google8protobuf8internal9ArenaImpl28AllocateAlignedAndAddCleanupEmPFvPvE</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Details-8"><span class="toc-number">2.11.1.</span> <span class="toc-text">Details</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Cause-8"><span class="toc-number">2.11.2.</span> <span class="toc-text">Cause</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Solution-8"><span class="toc-number">2.11.3.</span> <span class="toc-text">Solution</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-10-Undefined-symbol-ZN6caffe219CPUOperatorRegistryB5cxx11Ev"><span class="toc-number">2.12.</span> <span class="toc-text">2.10 Undefined symbol: _ZN6caffe219CPUOperatorRegistryB5cxx11Ev</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Details-9"><span class="toc-number">2.12.1.</span> <span class="toc-text">Details</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Cause-9"><span class="toc-number">2.12.2.</span> <span class="toc-text">Cause</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Solution-9"><span class="toc-number">2.12.3.</span> <span class="toc-text">Solution</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0-Motivation"><span class="toc-number">3.</span> <span class="toc-text">0 Motivation</span></a></li></ol>
+        
+    </div>
+</aside>
+
+</header>
+
+        <div id="content" class="content"><article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            [MineSweeping] The Long Struggle of DensePose Installation
+        </h1>
+        
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="/2018/11/18/densepose-minesweeping/">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2018-11-18T08:00:14.000Z" itemprop="datePublished">2018-11-18</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/Deep-Learning/">Deep Learning</a>, <a class="article-tag-link" href="/tags/MineSweeping/">MineSweeping</a>
+</div>
+
+
+        </div>
+        
+    </header>
+    
+    <section class="article-body markdown-body" id="article-body">
+        
+        
+        <p><br><br>DensePose is a great work in real-time human pose estimation, which is based on Caffe2 and Detectron framework. It extracts dense human body 3D surface based on RGB images. The installation instructions are provided <a href="https://github.com/facebookresearch/DensePose/blob/master/INSTALL.md" target="_blank" rel="noopener">here</a>.</p>
+<p>During my installation process, these are the problems that took me some time to tackle. I spent on week to finally figure out solutions to all the issues. So lucky of me not to give up too early...</p>
+<div align="center"><br>    <img src="/images/densepose-ms/facebook.jpg" width="15%" height="15%" alt="Greetings from Facebook AI Research"><br></div>
+
+<a id="more"></a>
+<p>By the way, <strong>before you suffer too much</strong>, I strongly recommend following the step-by-step <a href="https://github.com/Johnqczhang/densepose_installation/blob/master/README.md" target="_blank" rel="noopener">Caffe2+DensePose installation guide</a> by <a href="https://github.com/Johnqczhang" target="_blank" rel="noopener">@Johnqczhang</a>. If you think you&#39;re almost there, help yourself with the solutions below~</p>
+<h2 id="1-Environment"><a href="#1-Environment" class="headerlink" title="1 Environment"></a>1 Environment</h2><ul>
+<li>System: Ubuntu 18.04</li>
+<li>Linux kernel: 4.15.0-29-generic</li>
+<li>Graphics card: NVIDIA GeForce 1080Ti</li>
+<li>Graphics driver: 410.48</li>
+<li>CUDA: 10.0.130</li>
+<li>cuDNN: 7.3.1</li>
+<li>Caffe2: Built from source</li>
+<li>Python: 2.7.15, based on Anaconda 4.5.11</li>
+</ul>
+<h2 id="2-Problems-amp-Solutions"><a href="#2-Problems-amp-Solutions" class="headerlink" title="2 Problems &amp; Solutions"></a>2 Problems &amp; Solutions</h2><h3 id="2-1-Caffe2-module-not-found"><a href="#2-1-Caffe2-module-not-found" class="headerlink" title="2.1 Caffe2 module not found"></a>2.1 Caffe2 module not found</h3><h4 id="Details"><a href="#Details" class="headerlink" title="Details"></a>Details</h4><p>Occurred when running <code>make</code>.</p>
+<p>Main error message:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Could not find a package configuration file provided by <span class="string">"Caffe2"</span> with any  </span><br><span class="line">of the following names: </span><br><span class="line">    Caffe2Config.cmake </span><br><span class="line">    caffe2-config.cmake</span><br></pre></td></tr></table></figure></p>
+<h4 id="Cause"><a href="#Cause" class="headerlink" title="Cause"></a>Cause</h4><p>Caffe2 build path isn&#39;t known by CMake.</p>
+<h4 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h4><p>Added one line in the beginning of CMakeLists.txt:<br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span>(Caffe2_DIR <span class="string">"/path/to/pytorch/torch/share/cmake/Caffe2/"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>(Note: <code>set(Caffe2_DIR &quot;/path/to/pytorch/build/&quot;)</code> can also fix this issue but may cause other issues.) </p>
+<h3 id="2-2-Detectron-ops-lib-not-found"><a href="#2-2-Detectron-ops-lib-not-found" class="headerlink" title="2.2 Detectron ops lib not found"></a>2.2 Detectron ops lib not found</h3><h4 id="Details-1"><a href="#Details-1" class="headerlink" title="Details"></a>Details</h4><p>Occurred when running <code>python2 $DENSEPOSE/detectron/tests/test_spatial_narrow_as_op.py</code> after <code>make</code>.</p>
+<p>Main error message:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Detectron ops lib not found; make sure that your Caffe2 version includes Detectron module.</span><br></pre></td></tr></table></figure></p>
+<h4 id="Cause-1"><a href="#Cause-1" class="headerlink" title="Cause"></a>Cause</h4><p>Seems that the Python part of DensePose couldn&#39;t recognize Caffe2.</p>
+<h4 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution"></a>Solution</h4><p>Add <code>/path/to/pytorch/build</code> to <code>PYTHONPATH</code> environment variable. Could be added by directly <code>export PYTHONPATH=$PYTHONPATH:/path/to/pytorch/build</code> instruction or by adding this line to <code>~/.bashrc</code>. Remember to run <code>source ~/.bashrc</code> after the modification.</p>
+<h3 id="2-3-cmake-files-not-found-amp-Unknown-CMake-command-quot-caffe2-interface-library-quot"><a href="#2-3-cmake-files-not-found-amp-Unknown-CMake-command-quot-caffe2-interface-library-quot" class="headerlink" title="2.3 *.cmake files not found &amp; Unknown CMake command &quot;caffe2_interface_library&quot;"></a>2.3 *.cmake files not found &amp; Unknown CMake command &quot;caffe2_interface_library&quot;</h3><h4 id="Details-2"><a href="#Details-2" class="headerlink" title="Details"></a>Details</h4><p>Occurred when running <code>make ops</code>.</p>
+<p>Main error message:<br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">CMake Error at /path/to/pytorch/build/Caffe2Config.cmake:<span class="number">14</span> (<span class="keyword">include</span>):</span><br><span class="line">  <span class="keyword">include</span> could not find load file:</span><br><span class="line"></span><br><span class="line">    /path/to/pytorch/build/public/utils.cmake</span><br><span class="line">    /path/to/pytorch/build/public/threads.cmake</span><br><span class="line">    /path/to/pytorch/build/public/cuda.cmake</span><br><span class="line">    /path/to/pytorch/build/public/mkl.cmake</span><br><span class="line">    /path/to/pytorch/build/Caffe2Targets.cmake</span><br><span class="line"></span><br><span class="line">Call Stack (most recent call first):</span><br><span class="line">  CMakeLists.txt:<span class="number">8</span> (<span class="keyword">find_package</span>)</span><br><span class="line"></span><br><span class="line">CMake Error at /path/to/pytorch/build/Caffe2Config.cmake:<span class="number">117</span> (caffe2_interface_library):</span><br><span class="line">  Unknown CMake command <span class="string">"caffe2_interface_library"</span>.</span><br><span class="line">Call Stack (most recent call first):</span><br><span class="line">  CMakeLists.txt:<span class="number">8</span> (<span class="keyword">find_package</span>)</span><br></pre></td></tr></table></figure></p>
+<p>(Several <code>*.cmake</code> files, I only showed a few.)</p>
+<h4 id="Cause-2"><a href="#Cause-2" class="headerlink" title="Cause"></a>Cause</h4><p>These files are not in the <code>pytorch/build</code> directory. By searching, I found that they are in the <code>pytorch/torch/share/cmake/Caffe2</code> directory.</p>
+<h4 id="Solution-2"><a href="#Solution-2" class="headerlink" title="Solution"></a>Solution</h4><p>Added one line in the beginning of CMakeLists.txt:<br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span>(Caffe2_DIR <span class="string">"/path/to/pytorch/torch/share/cmake/Caffe2/"</span>)</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-4-quot-context-gpu-h-quot-not-found"><a href="#2-4-quot-context-gpu-h-quot-not-found" class="headerlink" title="2.4 &quot;context_gpu.h&quot; not found."></a>2.4 &quot;context_gpu.h&quot; not found.</h3><h4 id="Details-3"><a href="#Details-3" class="headerlink" title="Details"></a>Details</h4><p>Occurred when running <code>make ops</code>.</p>
+<p>I forgot to record the error messages, but it should be obvious that some header files(not just <code>context_gpu.h</code>) are missing.</p>
+<h4 id="Cause-3"><a href="#Cause-3" class="headerlink" title="Cause"></a>Cause</h4><p>This time it&#39;s the include path not recognized...</p>
+<h4 id="Solution-3"><a href="#Solution-3" class="headerlink" title="Solution"></a>Solution</h4><p>Added one line in the beginning of CMakeLists.txt:<br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">include_directories</span>(<span class="string">"/path/to/pytorch/torch/lib/include"</span>)</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-5-This-file-was-generated-by-a-newer-version-of-protoc-which-is-incompatible-with-your-Protocol-Buffer-headers-Please-update-your-headers"><a href="#2-5-This-file-was-generated-by-a-newer-version-of-protoc-which-is-incompatible-with-your-Protocol-Buffer-headers-Please-update-your-headers" class="headerlink" title="2.5 This file was generated by a newer version of protoc which is incompatible with your Protocol Buffer headers. Please update your headers."></a>2.5 This file was generated by a newer version of protoc which is incompatible with your Protocol Buffer headers. Please update your headers.</h3><h4 id="Details-4"><a href="#Details-4" class="headerlink" title="Details"></a>Details</h4><p>Occurred when running <code>make ops</code>.</p>
+<p>Main error message:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/path/to/pytorch/torch/lib/include/caffe2/proto/caffe2.pb.h:12:2: error: #error This file was generated by a newer version of protoc which is</span><br><span class="line">#error This file was generated by a newer version of protoc which is</span><br><span class="line">^</span><br><span class="line">/path/to/pytorch/torch/lib/include/caffe2/proto/caffe2.pb.h:13:2: error: #error incompatible with your Protocol Buffer headers. Please update</span><br><span class="line">#error incompatible with your Protocol Buffer headers. Please update</span><br><span class="line">^</span><br><span class="line">/path/to/pytorch/torch/lib/include/caffe2/proto/caffe2.pb.h:14:2: error: #error your headers.</span><br><span class="line">#error your headers.</span><br><span class="line">^</span><br></pre></td></tr></table></figure></p>
+<h4 id="Cause-4"><a href="#Cause-4" class="headerlink" title="Cause"></a>Cause</h4><p>If you only have a protobuf higher than v3.6.1, this should not happen. Check if you have multiple protobufs installed from different sources. (In my case, there was a protobuf v3.2.0 installed with <code>apt-get</code> earlier)</p>
+<h4 id="Solution-4"><a href="#Solution-4" class="headerlink" title="Solution"></a>Solution</h4><p>I can&#39;t provide an exact solution. Please try<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">which protoc</span><br></pre></td></tr></table></figure></p>
+<p>and see where protobuf is installed. If this shows the protobuf you installed with Anaconda, remove it completely and try this again. Since DensePose tells you that you have an older version of protobuf, you should be able to locate one. After finding it, remove it or upgrade it to v3.6.1 or higher. I would prefer installing protobuf from source <a href="https://github.com/protocolbuffers/protobuf/releases" target="_blank" rel="noopener">here</a>. It&#39;s not so painful as installing DensePose.</p>
+<h3 id="2-6-quot-mkl-cblas-h-quot-not-found"><a href="#2-6-quot-mkl-cblas-h-quot-not-found" class="headerlink" title="2.6 &quot;mkl_cblas.h&quot; not found."></a>2.6 &quot;mkl_cblas.h&quot; not found.</h3><h4 id="Details-5"><a href="#Details-5" class="headerlink" title="Details"></a>Details</h4><p>Occurred when running <code>make ops</code>.</p>
+<p>I forgot to record the error messages, but it should be obvious too.</p>
+<h4 id="Cause-5"><a href="#Cause-5" class="headerlink" title="Cause"></a>Cause</h4><p>Intel Math Kernel Library was turned on but not found. (Why is it enabled when I didn&#39;t even install it???)</p>
+<h4 id="Solution-5"><a href="#Solution-5" class="headerlink" title="Solution"></a>Solution</h4><p>Install Intel Math Kernel Library <a href="https://software.intel.com/en-us/mkl/choose-download/linux" target="_blank" rel="noopener">here</a> and add <code>/opt/intel/compilers_and_libraries_2019.1.144/linux/mkl/include</code> to <code>C_PATH</code> environment variable:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export CPATH=$CPATH:/opt/intel/compilers_and_libraries_2019.1.144/linux/mkl/include</span><br></pre></td></tr></table></figure></p>
+<p>The exact path may vary according to the MKL version and your configuration.<br>Maybe try <code>find / -name mkl_cblas.h</code> to make sure of its location after the installation.</p>
+<p>Adding the path to CMakeLists.txt should also be helpful, but I didn&#39;t test it:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">include_directories(&quot;/opt/intel/compilers_and_libraries_2019.1.144/Linux/mkl/include&quot;)</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-7-GetSingleArgument’-is-not-a-member-of-‘caffe2-PoolPointsInterpOp’"><a href="#2-7-GetSingleArgument’-is-not-a-member-of-‘caffe2-PoolPointsInterpOp’" class="headerlink" title="2.7 GetSingleArgument’ is not a member of ‘caffe2::PoolPointsInterpOp’"></a>2.7 GetSingleArgument<float>’ is not a member of ‘caffe2::PoolPointsInterpOp<t, context>’</t,></float></h3><h4 id="Details-6"><a href="#Details-6" class="headerlink" title="Details"></a>Details</h4><p>Occurred when running <code>make ops</code>.<br>Main error message:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">/path/to/pytorch/caffe2/operators/accumulate_op.h: In constructor ‘caffe2::AccumulateOp&lt;T, Context&gt;::AccumulateOp(const caffe2::OperatorDef&amp;, caffe2::Workspace*)’:</span><br><span class="line">/path/to/pytorch/caffe2/operators/accumulate_op.h:13:187: error: ‘GetSingleArgument&lt;<span class="built_in">float</span>&gt;’ is not a member of ‘caffe2::AccumulateOp&lt;T, Context&gt;’</span><br><span class="line">   AccumulateOp(const OperatorDef&amp; operator_def, Workspace* ws)</span><br><span class="line">                                                                                                                                                                                           ^                        </span><br><span class="line">/path/to/pytorch/caffe2/operators/elementwise_ops.h: In constructor ‘caffe2::BinaryElementwiseWithArgsOp&lt;InputTypes, Context, Functor, OutputTypeMap&gt;::BinaryElementwiseWithArgsOp(const caffe2::OperatorDef&amp;, caffe2::Workspace*)’:</span><br><span class="line">/path/to/pytorch/caffe2/operators/elementwise_ops.h:106:189: error: ‘GetSingleArgument&lt;bool&gt;’ is not a member of ‘caffe2::BinaryElementwiseWithArgsOp&lt;InputTypes, Context, Functor, OutputTypeMap&gt;’</span><br><span class="line">   BinaryElementwiseWithArgsOp(const OperatorDef&amp; operator_def, Workspace* ws)</span><br><span class="line">                                                                                                                                                                                             ^                       </span><br><span class="line">/path/to/pytorch/caffe2/operators/elementwise_ops.h:106:272: error: ‘GetSingleArgument&lt;int&gt;’ is not a member of ‘caffe2::BinaryElementwiseWithArgsOp&lt;InputTypes, Context, Functor, OutputTypeMap&gt;’</span><br><span class="line">   BinaryElementwiseWithArgsOp(const OperatorDef&amp; operator_def, Workspace* ws)</span><br><span class="line">                                                                                                                                                                                                                                                                                ^                      </span><br><span class="line">/path/to/pytorch/caffe2/operators/elementwise_ops.h:106:350: error: ‘GetSingleArgument&lt;std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; &gt;’ is not a member of ‘caffe2::BinaryElementwiseWithArgsOp&lt;InputTypes, Context, Functor, OutputTypeMap&gt;’</span><br><span class="line">   BinaryElementwiseWithArgsOp(const OperatorDef&amp; operator_def, Workspace* ws)</span><br></pre></td></tr></table></figure></p>
+<h4 id="Cause-6"><a href="#Cause-6" class="headerlink" title="Cause"></a>Cause</h4><p>I&#39;m not sure. Could be that <code>GetSingleArgument()</code> is defined elsewhere?</p>
+<h4 id="Solution-6"><a href="#Solution-6" class="headerlink" title="Solution"></a>Solution</h4><p>Modify <code>/path/to/densepose/detectron/ops/pool_points_interp.h</code>. Change <code>OperatorBase::GetSingleArgument&lt;float&gt;</code> to <code>this-&gt;template GetSingleArgument&lt;float&gt;</code></p>
+<p>(Thanks to badpx@Github: <a href="https://github.com/facebookresearch/DensePose/pull/137/commits/51389c6a02173a25e9429825db452beb5e1cf3be" target="_blank" rel="noopener">https://github.com/facebookresearch/DensePose/pull/137/commits/51389c6a02173a25e9429825db452beb5e1cf3be</a>) </p>
+<h3 id="2-8-fatal-error-caffe2-utils-threadpool-ThreadPool-h-No-such-file-or-directory"><a href="#2-8-fatal-error-caffe2-utils-threadpool-ThreadPool-h-No-such-file-or-directory" class="headerlink" title="2.8 fatal error: caffe2/utils/threadpool/ThreadPool.h: No such file or directory"></a>2.8 fatal error: caffe2/utils/threadpool/ThreadPool.h: No such file or directory</h3><h4 id="Details-7"><a href="#Details-7" class="headerlink" title="Details"></a>Details</h4><p>Occurs when running &quot;make ops&quot;.</p>
+<p>Main error message:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/path/to/pytorch/torch/lib/include/caffe2/core/workspace.h:19:48: fatal error: caffe2/utils/threadpool/ThreadPool.h: No such file or directory</span><br></pre></td></tr></table></figure></p>
+<p>This should only happen when your Caffe2 is installed with Anaconda.</p>
+<h3 id="Cause-7"><a href="#Cause-7" class="headerlink" title="Cause"></a>Cause</h3><p>If your Caffe2 is installed with Anaconda, these files may not be found anywhere in the Caffe2 directory, or in your hard disk at all.</p>
+<h3 id="Solution-7"><a href="#Solution-7" class="headerlink" title="Solution"></a>Solution</h3><p>In <a href="https://github.com/facebookresearch/DensePose/issues/152" target="_blank" rel="noopener">Anikily@Github</a>&#39;s case, downloading Caffe2 source code and add its path to DensePose&#39;s include directories will work:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git@github.com:pytorch/pytorch.git</span><br></pre></td></tr></table></figure>
+<p>and add one line in the beginning of DensePose/CMakeLists.txt:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">include_directories(&quot;/path/to/pytorch&quot;)</span><br></pre></td></tr></table></figure></p>
+<p>The directory you include here should contain caffe2/utils/threadpool/ThreadPool.h and all the others.</p>
+<p>I don&#39;t think this issue should be solved this way, but I&#39;m sure that these files couldn&#39;t be found anywhere else. If anyone finds a better solution, please comment here to help the others.</p>
+<h3 id="2-9-Undefined-symbol-ZN6google8protobuf8internal9ArenaImpl28AllocateAlignedAndAddCleanupEmPFvPvE"><a href="#2-9-Undefined-symbol-ZN6google8protobuf8internal9ArenaImpl28AllocateAlignedAndAddCleanupEmPFvPvE" class="headerlink" title="2.9 Undefined symbol: _ZN6google8protobuf8internal9ArenaImpl28AllocateAlignedAndAddCleanupEmPFvPvE"></a>2.9 Undefined symbol: _ZN6google8protobuf8internal9ArenaImpl28AllocateAlignedAndAddCleanupEmPFvPvE</h3><h4 id="Details-8"><a href="#Details-8" class="headerlink" title="Details"></a>Details</h4><p>Occurred when running <code>python detectron/tests/test_zero_even_op.py</code>.</p>
+<p>Main error message:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">OSError: /path/to/densepose/build/libcaffe2_detectron_custom_ops_gpu.so: undefined symbol: _ZN6google8protobuf8internal9ArenaImpl28AllocateAlignedAndAddCleanupEmPFvPvE</span><br></pre></td></tr></table></figure></p>
+<h4 id="Cause-8"><a href="#Cause-8" class="headerlink" title="Cause"></a>Cause</h4><p>WTF is this!???<br>As can be seen, this symbol has something to do with Google, and protobuf.<br>I guess this is caused by a different protobuf version. Good news is that a proper version of protobuf was also built with Caffe2, so why not tell this to DensePose?</p>
+<h4 id="Solution-8"><a href="#Solution-8" class="headerlink" title="Solution"></a>Solution</h4><p>In <code>/path/to/densepose/CMakeLists.txt</code>, Add a few lines in the beginning:<br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">add_library</span>(libprotobuf STATIC IMPORTED) </span><br><span class="line"></span><br><span class="line"><span class="keyword">set</span>(PROTOBUF_LIB <span class="string">"/path/to/pytorch/torch/lib/libprotobuf.a"</span>) </span><br><span class="line"></span><br><span class="line"><span class="keyword">set_property</span>(TARGET libprotobuf PROPERTY IMPORTED_LOCATION <span class="string">"$&#123;PROTOBUF_LIB&#125;"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>You can find two <code>target_link_libraries</code> lines in this file(they are not adjacent):<br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">target_link_libraries</span>(caffe2_detectron_custom_ops caffe2_library) </span><br><span class="line"><span class="keyword">target_link_libraries</span>(caffe2_detectron_custom_ops_gpu caffe2_gpu_library)</span><br></pre></td></tr></table></figure></p>
+<p>Edit the two lines, adding a &quot;libprotobuf&quot; at the end to each of them:<br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">target_link_libraries</span>(caffe2_detectron_custom_ops caffe2_library libprotobuf) </span><br><span class="line"><span class="keyword">target_link_libraries</span>(caffe2_detectron_custom_ops_gpu caffe2_gpu_library libprotobuf)</span><br></pre></td></tr></table></figure></p>
+<p>Then run <code>make ops</code> again, and <code>python detectron/tests/test_zero_even_op.py</code> again.</p>
+<p>(Thanks to hyounsamk@Github: <a href="https://github.com/facebookresearch/DensePose/issues/119" target="_blank" rel="noopener">https://github.com/facebookresearch/DensePose/issues/119</a>)</p>
+<p>After fixing this issue, my DensePose passed tests and was running flawlessly. If any more issues remain, don&#39;t hesitate to comment here~</p>
+<h3 id="2-10-Undefined-symbol-ZN6caffe219CPUOperatorRegistryB5cxx11Ev"><a href="#2-10-Undefined-symbol-ZN6caffe219CPUOperatorRegistryB5cxx11Ev" class="headerlink" title="2.10 Undefined symbol: _ZN6caffe219CPUOperatorRegistryB5cxx11Ev"></a>2.10 Undefined symbol: _ZN6caffe219CPUOperatorRegistryB5cxx11Ev</h3><h4 id="Details-9"><a href="#Details-9" class="headerlink" title="Details"></a>Details</h4><p>Occurred when running <code>python detectron/tests/test_zero_even_op.py</code>, with Caffe2 installed with Anaconda.</p>
+<p>Main error message:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">OSError: /path/to/densepose/build/libcaffe2_detectron_custom_ops_gpu.so: undefined symbol: _ZN6caffe219CPUOperatorRegistryB5cxx11Ev</span><br></pre></td></tr></table></figure></p>
+<h4 id="Cause-9"><a href="#Cause-9" class="headerlink" title="Cause"></a>Cause</h4><p>As can be seen from the messy undefined symbol, this should have something to do with Caffe2 and probably CXX11(oh really???).</p>
+<p>Run <code>ldd -r /path/to/densepose/build/libcaffe2_detectron_custom_ops.so</code> and the one or several undefined symbols with similar names will be shown, which should have been defined in <code>libcaffe2.so</code>. After running <code>strings -a /path/to/pytorch/torch/lib/libcaffe2.so | grep _ZN6caffe219CPUOperator</code>, a few similar symbols (two, in my case) would come up, but are different from the one undefined - <code>&quot;B5cxx11&quot;</code> is missing.</p>
+<p>Why does DensePose want to find a symbol with <code>&quot;B5cxx11&quot;</code>? Who added this suffix?<br>It should be our GCC who did it when compiling DensePose with C++11 standard!</p>
+<p>To find which version of GCC was Caffe2 built by, run <code>strings -a /path/to/pytorch/torch/lib/libcaffe2.so | grep GCC:</code>.<br>In my case, the output is:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GCC: (GNU) 4.9.2 20150212 (Red Hat 4.9.2-6)</span><br></pre></td></tr></table></figure></p>
+<p>Oh? It seems that Caffe2 developers are Red Hat lovers!<br>The Caffe2 installed with Anaconda was built by GCC 4.9.2, which had a slightly different standard on naming symbols.</p>
+<h4 id="Solution-9"><a href="#Solution-9" class="headerlink" title="Solution"></a>Solution</h4><p>The simpliest way out is to turn to GCC 4.9.2 for building DensePose, too.<br>Otherwise, maybe also consider compiling Caffe2/PyTorch from source code?</p>
+<p>(Many thanks to Johnqczhang@Github: <a href="https://github.com/linkinpark213/linkinpark213.github.io/issues/12" target="_blank" rel="noopener">https://github.com/linkinpark213/linkinpark213.github.io/issues/12</a>)</p>
+<div align="center"><br>    <img src="/images/densepose-ms/ican.jpg" width="15%" height="15%" alt="I just can!"><br></div>
+
+<h2 id="0-Motivation"><a href="#0-Motivation" class="headerlink" title="0 Motivation"></a>0 Motivation</h2><p>Starting from this post, I decide to keep a record (tag: MineSweeping) of the issues I meet while working with environments and also their solutions. </p>
+<p>Doing configurations in order to run others&#39; code may be a difficult task, and is sometimes depressing, since various issues could arise, and the it&#39;s impossible for the authors to keep providing solutions for every user in the community. What&#39;s worse, after fixing some problems with a lot of struggle, one may have to waste the same amount of time on the same issue the next time he/she run it again. That&#39;s why I decide to keep this record: to avoid wasting time twice, while also helping others deal with problems if possible.</p>
+
+        
+        
+    </section>
+</article>
+
+
+
+<!-- Gitalk start  -->
+
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script> 
+<div id="gitalk-container"></div>     
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+
+		clientID: `c4adccc75586706f480a`,
+		clientSecret: `cd36866f06c4b1cf832570bb669cdb75ab121ddd`,
+		repo: `linkinpark213.github.io`,
+		owner: 'linkinpark213',
+		admin: ['linkinpark213'],
+		id: window.location.pathname,
+    
+    });
+    gitalk.render('gitalk-container');
+</script> 
+
+<!-- Gitalk end -->
+
+</div>
+        <footer class="footer">
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, Theme by <a href="https://github.com/sanonz/hexo-theme-concise" target="_blank">Concise</a>
+</footer>
+
+<script type="text/javascript" src="//s13.cnzz.com/z_stat.php?id=1234567890&amp;web_id=1234567890"></script>
+
+
+    </div>
+
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
+    
+    <script type="text/javascript" src="/js/scrollspy.min.js"></script>
+    
+    <script type="text/javascript">
+        $(function() {
+            var nodes = {
+                nav: $('#nav'),
+                aside: $('#aside'),
+                navTags: $('#nav-tags')
+            };
+
+            $('#open-panel, #aside-mask').on('click', function() {
+                nodes.aside.toggleClass('panel-show');
+            });
+            $('#nav-tag').on('click', function(event) {
+                event.preventDefault();console.log(nodes.navTags.attr('class'))
+                nodes.navTags.toggleClass('tag-show');console.log(nodes.navTags.attr('class'))
+            })/*.hover(function() {
+                nodes.navTags.addClass('tag-show');
+            }, function() {
+                nodes.navTags.removeClass('tag-show');
+            });*/
+
+            
+            $(document.body).scrollspy({target: '#aside-inner'});
+            
+        });
+    </script>
+
+</body>
+</html>
