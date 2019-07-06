@@ -103,6 +103,7 @@ __(RPCF): RoI Pooled Correlation Filters for Visual Tracking__
 __Authors__: Yuxuan Sun, Chong Sun, Dong Wang, You He, Huchuan Lu
 __arXiv Link__: None
 __Project Link__: None
+__PDF Link__: http://openaccess.thecvf.com/content_CVPR_2019/papers/Dai_Visual_Tracking_via_Adaptive_Spatially-Regularized_Correlation_Filters_CVPR_2019_paper.pdf
 PDF Link: http://openaccess.thecvf.com/content_CVPR_2019/papers/Sun_ROI_Pooled_Correlation_Filters_for_Visual_Tracking_CVPR_2019_paper.pdf
 __Summary__: RoI-based pooling can be equivalently achieved by enforcing additional constraints on the learned filter weights and thus becomes feasible on the virtual circular samples. Considering RoI pooling in the correlation filter formula, the RPCF performs favourably against other state-of-the-art trackers.
 __Highlights__: RoI pooling in correlation filters
@@ -160,7 +161,7 @@ __Abstract__: In this paper, we propose a novel indirect monocular SLAM algorith
 
 
 __Leveraging Shape Completion for 3D Siamese Tracking__
-__Authors__: Silvio Giancola*, Jesus Zarzar*, and Bernard Ghanem
+__Authors__: Silvio Giancola, Jesus Zarzar, and Bernard Ghanem
 __arXiv Link__: https://arxiv.org/abs/1903.01784
 __Project Link__: https://github.com/SilvioGiancola/ShapeCompletion3DTracking
 __Abstract__: Point clouds are challenging to process due to their sparsity, therefore autonomous vehicles rely more on appearance attributes than pure geometric features. However, 3D LIDAR perception can provide crucial information for urban navigation in challenging light or weather conditions. In this paper, we investigate the versatility of Shape Completion for 3D Object Tracking in LIDAR point clouds. We design a Siamese tracker that encodes model and candidate shapes into a compact latent representation. We regularize the encoding by enforcing the latent representation to decode into an object model shape. We observe that 3D object tracking and 3D shape completion complement each other. Learning a more meaningful latent representation shows better discriminatory capabilities, leading to improved tracking performance. We test our method on the KITTI Tracking set using car 3D bounding boxes. Our model reaches a 76.94% Success rate and 81.38% Precision for 3D Object Tracking, with the shape completion regularization leading to an improvement of 3% in both metrics.
