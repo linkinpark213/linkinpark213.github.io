@@ -8,7 +8,10 @@ date: 2018-11-18 17:00:14
 Update in October 2019:
 
 DensePose has been re-implemented with the brand-new object detection framework [Detectron2](https://github.com/facebookresearch/detectron2), which is based on PyTorch and much easier to install and use (You don't have to manually compile Caffe2)
+
 I strongly recommend that you check out the new official DensePose code at [https://github.com/facebookresearch/detectron2/tree/master/projects/DensePose](https://github.com/facebookresearch/detectron2/tree/master/projects/DensePose).
+
+<!-- more -->
 
 <br />
 DensePose is a great work in real-time human pose estimation, which is based on Caffe2 and Detectron framework. It extracts dense human body 3D surface based on RGB images. The installation instructions are provided [here](https://github.com/facebookresearch/DensePose/blob/master/INSTALL.md).
@@ -19,9 +22,8 @@ During my installation process, these are the problems that took me some time to
     <img src="/images/densepose-ms/facebook.jpg" width="15%" height="15%" alt="Greetings from Facebook AI Research">
 </div>
 
-<!-- more -->
-
 By the way, **before you suffer too much**, I strongly recommend following the step-by-step [Caffe2+DensePose installation guide](https://github.com/Johnqczhang/densepose_installation/blob/master/README.md) by [@Johnqczhang](https://github.com/Johnqczhang). If you think you're almost there, help yourself with the solutions below~
+
 
 ## 1 Environment
 - System: Ubuntu 18.04
