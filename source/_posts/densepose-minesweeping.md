@@ -5,6 +5,11 @@ tags:
   - MineSweeping
 date: 2018-11-18 17:00:14
 ---
+Update in October 2019:
+
+DensePose has been re-implemented with the brand-new object detection framework [Detectron2](https://github.com/facebookresearch/detectron2), which is based on PyTorch and much easier to install and use (You don't have to manually compile Caffe2)
+I strongly recommend that you check out the new official DensePose code at [https://github.com/facebookresearch/detectron2/tree/master/projects/DensePose](https://github.com/facebookresearch/detectron2/tree/master/projects/DensePose).
+
 <br />
 DensePose is a great work in real-time human pose estimation, which is based on Caffe2 and Detectron framework. It extracts dense human body 3D surface based on RGB images. The installation instructions are provided [here](https://github.com/facebookresearch/DensePose/blob/master/INSTALL.md).
 
